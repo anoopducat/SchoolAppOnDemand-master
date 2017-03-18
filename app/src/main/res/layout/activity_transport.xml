@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_transport"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.admin.schoolappondemand.Transport">
+
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/include" />
+
+    <ImageView
+        android:id="@+id/iv_trnspt"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/school_bus"
+        android:layout_below="@id/include"
+        android:layout_width="match_parent"
+        android:layout_height="170dp" />
+<LinearLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="3"
+    android:id="@+id/l1_ivbtn"
+  android:layout_below="@+id/iv_trnspt"
+    android:orientation="horizontal">
+    <ImageButton
+         android:layout_width="40dp"
+         android:layout_height="match_parent"
+        android:id="@+id/iv_btn_bs"
+        android:src="@drawable/chk"
+        android:layout_marginLeft="00dp"
+    android:background="@drawable/ring"
+        android:layout_weight="1"
+    />
+    <ImageButton android:layout_width="107dp"
+        android:layout_height="109dp"
+        android:id="@+id/driver"
+        android:layout_weight="0.3"
+        android:layout_marginLeft="18dp"
+        android:src="@drawable/driver" />
+
+    <ImageButton
+        android:id="@+id/incharger"
+        android:layout_width="20dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1.2"
+        android:src="@drawable/incharger"
+        android:layout_marginLeft="25dp"/>
+</LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/l1_ivbtn"
+        android:id="@+id/liner_for_detail"
+        android:orientation="vertical">
+
+    </LinearLayout>
+</RelativeLayout>

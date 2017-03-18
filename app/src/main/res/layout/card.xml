@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv1"
+        cardview:cardBackgroundColor="@color/colorGreen"
+        android:layout_gravity="center_horizontal"
+        cardview:cardElevation="14dp"
+        cardview:cardCornerRadius="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="260dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:text="Id"
+                android:textColor="@color/colorWhite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="11dp"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/tv_as_id" />
+
+            <TextView
+                android:textColor="@color/colorWhite"
+                android:text="Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_as_id"
+                android:layout_marginStart="220dp"
+                android:id="@+id/as_name" />
+
+            <TextView
+                android:textColor="@color/colorWhite"
+                android:text="Class"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/as_name"
+                android:layout_alignLeft="@+id/as_name"
+                android:layout_alignStart="@+id/as_name"
+                android:layout_marginTop="23dp"
+                android:id="@+id/tv_cls" />
+
+            <TextView
+                android:textColor="@color/colorWhite"
+                android:text="Section"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_cls"
+                android:layout_alignLeft="@+id/tv_cls"
+                android:layout_alignStart="@+id/tv_cls"
+                android:layout_marginTop="27dp"
+                android:id="@+id/tv_sction" />
+
+            <TextView
+                android:textColor="@color/colorWhite"
+                android:text="Subject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_sction"
+                android:layout_alignRight="@+id/tv_sction"
+                android:layout_alignEnd="@+id/tv_sction"
+                android:layout_marginTop="22dp"
+                android:id="@+id/tv_subject" />
+
+            <TextView
+                android:textColor="@color/colorWhite"
+                android:text="Chapter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_subject"
+                android:layout_alignRight="@+id/tv_subject"
+                android:layout_alignEnd="@+id/tv_subject"
+                android:layout_marginTop="22dp"
+                android:id="@+id/tv_chapter" />
+
+            <TextView
+                android:textColor="@color/colorWhite"
+                android:text="Lesson"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignRight="@+id/tv_chapter"
+                android:layout_alignEnd="@+id/tv_chapter"
+                android:layout_marginBottom="2dp"
+
+                android:id="@+id/tv_lesson" />
+
+            <TextView
+                android:textColor="@color/colorWhite"
+                android:id="@+id/nm"
+                android:text="Name :"
+                android:layout_marginLeft="40dp"
+                android:layout_below="@+id/tv_as_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textColor="@color/colorWhite"
+                android:id="@+id/cls"
+                android:text="Class :"
+                android:layout_below="@id/nm"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textColor="@color/colorWhite"
+                android:id="@+id/se"
+                android:text="Section :"
+                android:layout_below="@+id/cls"
+                android:layout_marginTop="28dp"
+                android:layout_marginStart="42dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textColor="@color/colorWhite"
+                android:id="@+id/sub"
+                android:text="Subject :"
+                android:layout_below="@id/se"
+                android:layout_marginTop="26dp"
+                android:layout_marginStart="45dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textColor="@color/colorWhite"
+                android:text="Chapter :"
+                android:id="@+id/chptr"
+                android:layout_below="@+id/sub"
+                android:layout_marginTop="28dp"
+                android:layout_marginStart="45dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textColor="@color/colorWhite"
+                android:text="Lesson :"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="46dp"
+                android:layout_below="@id/chptr"
+                android:id="@+id/lss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+
+
+</LinearLayout>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_home_work"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.admin.schoolappondemand.HomeWork">
+
+    <include
+        layout="@layout/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/include" />
+
+    <devs.mulham.horizontalcalendar.HorizontalCalendarView
+        android:id="@+id/calendarView"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/include"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        app:textColorNormal="#bababa"
+        app:textColorSelected="#FFFF"
+        app:selectorColor="#c62828"
+        app:selectedDateBackground="#00ffffff"/>
+
+    <LinearLayout
+        android:layout_marginTop="59dp"
+        android:layout_below="@+id/calendarView"
+        android:id="@+id/l1_hmrk"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_hmrk"
+            android:layout_marginTop=".1dp"
+            android:layout_width="match_parent"
+            android:layout_height="370dp"></android.support.v7.widget.RecyclerView>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

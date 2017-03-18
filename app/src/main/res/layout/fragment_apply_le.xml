@@ -1,0 +1,86 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="5dp"
+    tools:context="com.example.admin.schoolappondemand.ApplyLe">
+
+    <!-- TODO: Update blank fragment layout -->
+   <TextView
+       android:id="@+id/tv_frm"
+       android:text="From :"
+       android:textSize="20sp"
+       android:layout_marginLeft="10dp"
+       android:layout_marginTop="10dp"
+       android:textColor="@color/colorBlack"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content" />
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/et_le_from"
+        android:hint="DD//MM//YYYY"
+        android:textAlignment="center"
+        android:background="@drawable/et_border"
+        android:layout_marginTop="22dp"
+        android:layout_below="@+id/tv_frm"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+
+    <TextView
+        android:id="@+id/tv_to"
+        android:layout_marginLeft="5dp"
+        android:textSize="20sp"
+        android:textColor="@color/colorBlack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_frm"
+        android:layout_alignStart="@+id/tv_frm"
+        android:layout_below="@+id/et_le_from"
+        android:layout_marginTop="20dp"
+        android:text="To :" />
+
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/et_le_to"
+        android:hint="DD//MM//YYYY"
+        android:textAlignment="center"
+        android:background="@drawable/et_border"
+        android:layout_below="@+id/tv_to"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+
+    <TextView
+        android:id="@+id/Reason"
+        android:textSize="20sp"
+        android:textColor="@color/colorBlack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_to"
+        android:layout_alignStart="@+id/tv_to"
+        android:layout_below="@+id/et_le_to"
+        android:layout_marginTop="25dp"
+        android:text="Reason :" />
+
+    <android.support.v7.widget.AppCompatEditText
+        android:background="@drawable/et_border"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_below="@+id/Reason"
+        android:id="@+id/et_le_resn"
+        android:layout_width="match_parent"
+        android:layout_height="100dp" />
+
+    <Button
+        android:id="@+id/btn_aply"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_le_resn"
+        android:text="Apply" />
+
+
+</RelativeLayout>

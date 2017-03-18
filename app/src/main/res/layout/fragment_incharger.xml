@@ -1,0 +1,128 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#eceff1"
+    android:layout_height="match_parent"
+    tools:context="com.example.admin.schoolappondemand.Incharger">
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/layout_bus_cg_d">
+        <TextView
+            android:id="@+id/tv_bus_chg_detail"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Bus Incharge Detail"
+            android:textSize="20sp"
+            android:textColor="@color/colorBlack"
+            android:layout_marginLeft="100dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/tv_textfordetail"
+        >
+        <TextView
+            android:textSize="15dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_first_in"
+            android:text="First Incharge                   :"/>
+        <TextView
+            android:layout_marginLeft="24dp"
+            android:textSize="15dp"
+            android:textColor="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fst_in"
+            android:text="N/A"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/tv_textfordetail2"
+        >
+        <TextView
+            android:textSize="15dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fistcontect_no"
+            android:text="Contact No                       :"/>
+        <TextView
+            android:layout_marginLeft="24dp"
+            android:textSize="15dp"
+            android:textColor="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ft_con"
+            android:text="N/A"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="90dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/tv_textfordetail3"
+        >
+        <TextView
+            android:textSize="15dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sec_Con"
+            android:text="Sec Incharge                    :"/>
+        <TextView
+            android:layout_marginLeft="24dp"
+            android:textSize="15dp"
+            android:textColor="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sec_in"
+            android:text="N/A"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="120dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/tv_textfordetail4"
+        >
+        <TextView
+            android:textSize="15dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sec_con"
+            android:text="Contact No                       :"/>
+        <TextView
+            android:layout_marginLeft="24dp"
+            android:textSize="15dp"
+            android:textColor="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sec_cont_no"
+            android:text="N/A"/>
+
+    </LinearLayout>
+
+
+</FrameLayout>

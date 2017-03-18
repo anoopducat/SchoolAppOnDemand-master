@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@drawable/login"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:paddingTop="90dp"
+        android:id="@+id/l1"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textColor="@color/colorBlue"
+            android:paddingTop="10dp"
+            android:layout_marginStart="290dp"
+            android:textSize="15sp"
+            android:id="@+id/tm"
+            android:text="TM"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textColor="@color/colorBlue"
+            android:layout_marginStart="80dp"
+            android:textSize="22dp"
+            android:id="@+id/app_txt"
+            android:text="SchoolAppOnDemand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <EditText
+        android:layout_width="220dp"
+        android:layout_height="35dp"
+        android:hint="Username"
+        android:background="@drawable/et_circular"
+        android:layout_marginTop="47dp"
+        android:id="@+id/et_uname"
+        android:textAlignment="center"
+        android:layout_below="@+id/l1"
+        android:layout_marginStart="80dp"
+        />
+
+    <EditText
+        android:layout_width="220dp"
+        android:layout_height="35dp"
+        android:textAlignment="center"
+        android:background="@drawable/et_circular"
+        android:hint="Password"
+        android:layout_marginTop="40dp"
+        android:id="@+id/editText2"
+        android:layout_below="@+id/et_uname"
+        android:layout_marginStart="80dp"
+        />
+
+    <Button
+        android:text="LogIn"
+        android:textColor="@color/colorBlack"
+        android:layout_width="220dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="52dp"
+        android:id="@+id/b"
+        android:background="#008afa"
+        android:layout_below="@+id/editText2"
+        android:layout_marginStart="80dp"
+         />
+
+
+</RelativeLayout>

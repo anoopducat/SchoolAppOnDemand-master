@@ -1,0 +1,181 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eceff1"
+    tools:context="com.example.admin.schoolappondemand.BusDetail">
+
+
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/layout_bs_dt">
+    <TextView
+        android:id="@+id/tv_bs_dtl"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="BUS STOP DETAIL"
+        android:textSize="20sp"
+        android:textColor="@color/colorBlack"
+        android:layout_marginLeft="100dp"
+        />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/tv_textfordetail"
+        >
+        <TextView
+            android:textSize="15dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_pkrt"
+            android:text="Pickup Route :"/>
+        <TextView
+            android:layout_marginLeft="24dp"
+            android:textSize="15dp"
+            android:textColor="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pk_rt"
+            android:text="N/A"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/tv_textfordetail1"
+        >
+        <TextView
+            android:textSize="15dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_pkst"
+            android:text="pickup Stop   :"/>
+        <TextView
+            android:layout_marginLeft="24dp"
+            android:textSize="15dp"
+            android:textColor="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pk_stp"
+            android:text="Private "/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="90dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/tv_textfordetail2"
+        >
+        <TextView
+            android:textSize="15dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_pktm"
+            android:text="Pickup Time  :"/>
+        <TextView
+            android:layout_marginLeft="24dp"
+            android:textSize="15dp"
+            android:textColor="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pk_tm"
+            android:text="N/A"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="120dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/tv_textfordetail3"
+        >
+        <TextView
+            android:textSize="15dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_drprt"
+            android:text="Drop Route    :"/>
+        <TextView
+            android:layout_marginLeft="24dp"
+            android:textSize="15dp"
+            android:textColor="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dp_rt"
+            android:text="N/A"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="150dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/tv_textfordetail4"
+        >
+        <TextView
+            android:textSize="15dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_dpstp"
+            android:text="Drop Stop      :"/>
+        <TextView
+            android:layout_marginLeft="24dp"
+            android:textSize="15dp"
+            android:textColor="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dp_stp"
+            android:text="Private "/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="180dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/tv_textfordetail5"
+        >
+        <TextView
+            android:textSize="15dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dp_tm"
+            android:text="Drop Time     :"/>
+        <TextView
+            android:layout_marginLeft="24dp"
+            android:textSize="15dp"
+            android:textColor="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/drp_tim"
+            android:text="N/A"/>
+
+    </LinearLayout>
+
+</FrameLayout>

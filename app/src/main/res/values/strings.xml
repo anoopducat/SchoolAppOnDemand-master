@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">SchoolApp OnDemand</string>
+    <string name="home_name">Home</string>
+    <string name="frg_clndr">Calender</string>
+    <string name="title_home">Home</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_my_assignment">MyAssignment</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_profile_page">SchoolAppOnDemand</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="title_activity_apply_leave">ApplyLeave</string>
+    <string name="title_activity_vehicle_tracking">Map</string>
+</resources>
