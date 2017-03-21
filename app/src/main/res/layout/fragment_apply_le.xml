@@ -66,20 +66,24 @@
         android:text="Reason :" />
 
     <android.support.v7.widget.AppCompatEditText
+        android:gravity="top"
         android:background="@drawable/et_border"
         android:layout_marginTop="15dp"
-        android:layout_marginLeft="15dp"
+        android:layout_marginLeft="1dp"
+        android:inputType="textMultiLine"
         android:layout_below="@+id/Reason"
         android:id="@+id/et_le_resn"
         android:layout_width="match_parent"
-        android:layout_height="100dp" />
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true" />
 
     <Button
         android:id="@+id/btn_aply"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_below="@id/et_le_resn"
+        android:background="@drawable/loginbtn"
         android:text="Apply" />
 
 

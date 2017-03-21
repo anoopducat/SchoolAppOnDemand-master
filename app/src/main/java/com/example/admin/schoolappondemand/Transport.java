@@ -1,5 +1,6 @@
 package com.example.admin.schoolappondemand;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -34,7 +35,8 @@ public class Transport extends AppCompatActivity {
        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               onBackPressed();
+               Intent i=new Intent(Transport.this,ProfilePage.class);
+               startActivity(i);
            }
        });
 

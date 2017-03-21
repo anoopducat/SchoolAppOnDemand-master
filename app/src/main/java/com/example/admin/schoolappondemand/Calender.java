@@ -1,7 +1,9 @@
 package com.example.admin.schoolappondemand;
 
 import android.icu.util.Calendar;
+import android.os.Build;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -14,15 +16,29 @@ import com.prolificinteractive.materialcalendarview.CalendarMode;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Calender extends AppCompatActivity {
         MaterialCalendarView materialCalendarView;
 
     TextView tv1;
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_calender);
+
+        Calendar calendar=Calendar.getInstance();
+        List<Long> dates=new ArrayList<Long>();
+
+        calendar.set(Calendar.DAY_OF_WEEK,Calendar.TUESDAY);
+        dates.add(calendar.getTimeInMillis());
+
+        calendar.set(Calendar.DAY_OF_WEEK,Calendar.FRIDAY);
+        dates.add(calendar.getTimeInMillis());
+
 
         Toolbar toolbar= (Toolbar) findViewById(R.id.toolbar);
 
@@ -52,6 +68,8 @@ public class Calender extends AppCompatActivity {
                 .setMaximumDate(CalendarDay.from(2100, 12, 31))
                 .setCalendarDisplayMode(CalendarMode.MONTHS)
                 .commit();
+
+
 
         materialCalendarView.setOnDateChangedListener(new OnDateSelectedListener() {
             @Override

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:background="@drawable/login"
+ android:background="@drawable/myschool"
     android:layout_height="match_parent">
 
     <LinearLayout
@@ -34,7 +34,7 @@
         android:layout_width="220dp"
         android:layout_height="35dp"
         android:hint="Username"
-        android:background="@drawable/et_circular"
+        android:background="@drawable/username"
         android:layout_marginTop="47dp"
         android:id="@+id/et_uname"
         android:textAlignment="center"
@@ -46,7 +46,7 @@
         android:layout_width="220dp"
         android:layout_height="35dp"
         android:textAlignment="center"
-        android:background="@drawable/et_circular"
+        android:background="@drawable/username"
         android:hint="Password"
         android:layout_marginTop="40dp"
         android:id="@+id/editText2"
@@ -61,7 +61,8 @@
         android:layout_height="36dp"
         android:layout_marginTop="52dp"
         android:id="@+id/b"
-        android:background="#008afa"
+        android:background="@drawable/loginbtn"
+
         android:layout_below="@+id/editText2"
         android:layout_marginStart="80dp"
          />

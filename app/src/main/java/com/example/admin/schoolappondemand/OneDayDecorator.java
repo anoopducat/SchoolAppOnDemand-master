@@ -1,12 +1,14 @@
 package com.example.admin.schoolappondemand;
 
 import android.graphics.Color;
+import android.text.style.BackgroundColorSpan;
 import android.text.style.ForegroundColorSpan;
 
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.DayViewDecorator;
 import com.prolificinteractive.materialcalendarview.DayViewFacade;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashSet;
 
@@ -17,9 +19,11 @@ import java.util.HashSet;
 public class OneDayDecorator implements DayViewDecorator {
 
     private CalendarDay date;
+    private final HashSet<CalendarDay> dates;
 
-    public OneDayDecorator(int colorGreen, HashSet<CalendarDay> setDays) {
+    public OneDayDecorator(int colorGreen, HashSet<CalendarDay> dates) {
         date = CalendarDay.today();
+        this.dates = dates;
     }
 
     @Override
@@ -30,9 +34,10 @@ public class OneDayDecorator implements DayViewDecorator {
     @Override
     public void decorate(DayViewFacade view) {
 
+        view.addSpan(new BackgroundColorSpan(R.drawable.c2));
 
 
-        view.addSpan(new ForegroundColorSpan(Color.RED));
+       // view.addSpan(new ForegroundColorSpan(Color.RED));
 
     }
 

@@ -1,7 +1,6 @@
 package com.example.admin.schoolappondemand;
 
 import android.graphics.Color;
-import android.icu.util.Calendar;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
@@ -27,6 +26,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 import devs.mulham.horizontalcalendar.HorizontalCalendar;

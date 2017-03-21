@@ -11,15 +11,17 @@ import java.util.Calendar;
 import java.util.Date;
 
 /**
- * Created by admin on 3/8/2017.
+ * Created by admin on 3/21/2017.
  */
 
 public class PresentDay implements DayViewDecorator {
 
-
-
     private final Calendar calendar = Calendar.getInstance();
     private CalendarDay date;
+
+    public PresentDay(CalendarDay date) {
+        this.date = date;
+    }
 
     @Override
     public boolean shouldDecorate(CalendarDay day) {

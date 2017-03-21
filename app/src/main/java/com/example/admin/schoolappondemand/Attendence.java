@@ -1,6 +1,6 @@
 package com.example.admin.schoolappondemand;
 
-import android.icu.util.Calendar;
+
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.support.annotation.RequiresApi;
@@ -16,6 +16,8 @@ import com.prolificinteractive.materialcalendarview.CalendarMode;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
 
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashSet;
 
 public class Attendence extends AppCompatActivity {
@@ -23,6 +25,7 @@ public class Attendence extends AppCompatActivity {
     TextView tv1;
     MaterialCalendarView materialCalendarView;
     Calendar cal1,cal2;
+
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -78,11 +81,13 @@ public class Attendence extends AppCompatActivity {
             }
         });
 
+
+
         HashSet<CalendarDay> dates;
         //materialCalendarView.addDecorator(new OneDayDecorator(R.color.colorGreen,setDays));
         materialCalendarView.addDecorator(new MonDay(R.color.colorIndi,setDays));
         materialCalendarView.addDecorator(new OneDayDecorator(R.color.colorGreen,setDays));
-        materialCalendarView.addDecorator(new PresentDay());
+
         
 
     }
