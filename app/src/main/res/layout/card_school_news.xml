@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:id="@+id/crd_nws"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_marginLeft="5dp"
+                android:background="@drawable/news"
+                android:id="@+id/iv_nws_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:textColor="@color/colorBlack"
+                android:textSize="20sp"
+                android:text="Headlines ....."
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="170dp"
+                android:id="@+id/nws_hdng"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp"
+                android:text="Date"
+                android:layout_marginTop="19dp"
+                android:layout_marginLeft="170dp"
+                android:layout_below="@+id/nws_hdng"
+                android:id="@+id/nws_dt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textColor="@color/colorBlack"
+                android:textSize="20sp"
+                android:text="News ............."
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/iv_nws_title"
+                android:id="@+id/nws"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+
+            <View
+                android:layout_marginTop="10dp"
+                android:id="@+id/v2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/black"
+                android:layout_below="@id/nws"/>
+
+
+            <Button
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:background="@color/colorWhite"
+                android:text="read more >>"
+                android:layout_below="@id/v2"
+                android:id="@+id/shw_nws"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+
+
+        </RelativeLayout>
+
+
+
+    </android.support.v7.widget.CardView>
+
+
+</RelativeLayout>

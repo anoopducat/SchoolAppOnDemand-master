@@ -60,7 +60,7 @@
                     android:background="@drawable/imagecircle"
                     android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true"
-                    android:id="@+id/imageView" />
+                    android:id="@+id/nimageView" />
             </RelativeLayout>
         </FrameLayout>
 
@@ -76,12 +76,14 @@
             android:layout_marginLeft="1dp"
             android:horizontalSpacing="1dp"
             android:verticalSpacing="1dp"
+            android:layout_marginBottom="45dp"
 
             android:gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
         </GridView>
+
 
         <FrameLayout
             android:background="@color/colorIndigo"

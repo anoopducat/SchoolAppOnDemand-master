@@ -34,10 +34,10 @@ public class OneDayDecorator implements DayViewDecorator {
     @Override
     public void decorate(DayViewFacade view) {
 
-        view.addSpan(new BackgroundColorSpan(R.drawable.c2));
+        //view.addSpan(new BackgroundColorSpan(R.drawable.c2));
 
 
-       // view.addSpan(new ForegroundColorSpan(Color.RED));
+        view.addSpan(new ForegroundColorSpan(Color.RED));
 
     }
 

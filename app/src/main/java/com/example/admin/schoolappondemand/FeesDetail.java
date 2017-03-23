@@ -4,6 +4,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -11,12 +25,82 @@ public class FeesDetail extends AppCompatActivity {
 
     RecyclerView recyclerView;
 
+    TextView tv1,totl,ddu,ppad;
+
+    RequestQueue requestQueue;
+
     ArrayList<FeeDetailModel> Al=new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fees_detail);
+
+        requestQueue= Volley.newRequestQueue(this);
+
+
+        totl= (TextView) findViewById(R.id.tv_fdetail_ttl);
+        ddu= (TextView) findViewById(R.id.tv_fdetail_due);
+        ppad= (TextView) findViewById(R.id.tv_fdetail_paid);
+
+
+        JsonArrayRequest jsonArrayRequest=new JsonArrayRequest("http://203.124.96.117:8063/Service1.asmx/Fee", new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray jsonArray) {
+
+                for(int i=0;i<jsonArray.length();i++)
+                {
+                    try {
+                        JSONObject object= (JSONObject) jsonArray.get(67);
+
+                        String total =object.getString("TotalFee");
+                        String fdue=object.getString("Balance");
+                        String ntotal=object.getString("NetTotal");
+
+                        totl.setText(total);
+                        ddu.setText(fdue);
+                        ppad.setText(ntotal);
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError volleyError) {
+
+                Toast.makeText(FeesDetail.this, "" + volleyError, Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        requestQueue.add(jsonArrayRequest);
+
+
+
+        Toolbar toolbar= (Toolbar) findViewById(R.id.toolbar);
+
+        tv1= (TextView) findViewById(R.id.profile_tv);
+
+        setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+
+        toolbar.setNavigationIcon(R.drawable.back_btn);
+
+       toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               onBackPressed();
+           }
+       });
+
+        tv1.setText("Fee Detail");
+
         recyclerView= (RecyclerView) findViewById(R.id.rv_feedetail);
 
 
@@ -79,7 +163,8 @@ public class FeesDetail extends AppCompatActivity {
 
         FeeDetailAdapter obj=new FeeDetailAdapter(this,R.layout.fee_card,Al);
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+
         recyclerView.setAdapter(obj);
 
     }

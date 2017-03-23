@@ -48,7 +48,7 @@ public class Fee extends AppCompatActivity {
                 for(int i=0;i<jsonArray.length();i++)
                 {
                     try {
-                        JSONObject object= (JSONObject) jsonArray.get(i);
+                        JSONObject object= (JSONObject) jsonArray.get(67);
 
                         String total =object.getString("TotalFee");
                         String fdue=object.getString("Balance");

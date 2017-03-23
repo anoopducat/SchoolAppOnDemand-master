@@ -27,8 +27,8 @@ Button btn1;
 
     RequestQueue requestQueue;
 
-    String unm="1001";
-    String pasd="ankit";
+    String unm="1482/16";
+    String pasd="1482/16";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,14 +66,17 @@ Button btn1;
 
 
 
-                if(name.length()==0 && pass.length()==0)
+                if(name.equals(unm)&& pass.equals(pasd))
                 {
-                    e1.setError("Name cannot be Blank");
-                    e2.setError("PassWord can not be Blank");
-                }
-                else {
                     Intent i=new Intent(MainActivity.this,ProfilePage.class);
                     startActivity(i);
+                }
+                else {
+
+                    e1.setError("Name cannot be Blank");
+                    e2.setError("PassWord can not be Blank");
+
+
 
                 }
 

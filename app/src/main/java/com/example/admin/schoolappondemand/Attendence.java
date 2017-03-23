@@ -83,10 +83,12 @@ public class Attendence extends AppCompatActivity {
 
 
 
-        HashSet<CalendarDay> dates;
-        //materialCalendarView.addDecorator(new OneDayDecorator(R.color.colorGreen,setDays));
+
+
         materialCalendarView.addDecorator(new MonDay(R.color.colorIndi,setDays));
         materialCalendarView.addDecorator(new OneDayDecorator(R.color.colorGreen,setDays));
+        materialCalendarView.addDecorator(new LeaveDecorator());
+        materialCalendarView.addDecorator(new PresentStudent());
 
         
 

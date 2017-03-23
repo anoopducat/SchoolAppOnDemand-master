@@ -1,9 +1,11 @@
 package com.example.admin.schoolappondemand;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.util.LruCache;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -22,7 +24,9 @@ import android.widget.Toast;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.NetworkImageView;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
@@ -41,16 +45,37 @@ public class ProfilePage extends AppCompatActivity
     RequestQueue requestQueue;
     FrameLayout frameLayout;
 
+    private ImageLoader mImageLoader;
+
+    NetworkImageView networkImageView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_page);
 
+
+        requestQueue= Volley.newRequestQueue(this);
+
+
+        networkImageView= (NetworkImageView) findViewById(R.id.nimageView);
+
+        mImageLoader = new ImageLoader(requestQueue, new ImageLoader.ImageCache() {
+            private final LruCache<String, Bitmap> mCache = new LruCache<String, Bitmap>(10);
+            public void putBitmap(String url, Bitmap bitmap) {
+                mCache.put(url, bitmap);
+            }
+            public Bitmap getBitmap(String url) {
+                return mCache.get(url);
+            }
+        });
+
+        networkImageView.setImageUrl("http://schoolappondemand.com/image/StudentImages/index%20c.jpg",mImageLoader);
+
         nm= (TextView) findViewById(R.id.title_name);
         cls= (TextView) findViewById(R.id.title_class);
 
-        requestQueue= Volley.newRequestQueue(this);
 
         JsonArrayRequest jsn=new JsonArrayRequest("http://203.124.96.117:8063/Service1.asmx/StudentDetails", new Response.Listener<JSONArray>() {
             @Override
@@ -59,7 +84,7 @@ public class ProfilePage extends AppCompatActivity
                 for(int i=0;i<jsonArray.length();i++)
                 {
                     try {
-                        JSONObject object= (JSONObject) jsonArray.get(0);
+                        JSONObject object= (JSONObject) jsonArray.get(892);
 
                         String name =object.getString("Name");
                         String className=object.getString("ClassName");
@@ -198,10 +223,6 @@ public class ProfilePage extends AppCompatActivity
         pf21.setImage(R.drawable.d15);
         al.add(pf21);
 
-        ProfileModel pf22=new ProfileModel();
-        pf22.setName("Extras");
-        pf22.setImage(R.drawable.if_extra);
-        al.add(pf22);
 
 
         ProfileAdapter pa=new ProfileAdapter(this,R.layout.grid,al);
@@ -375,13 +396,7 @@ public class ProfilePage extends AppCompatActivity
                         // isTransaction = true;
                         break;
 
-                    case 21:
 
-                        // Intent i21=new Intent(Home.this,Extras.class);
-                        //startActivity(i21);
-                        //fragmentToLaunch=new Extras();
-                        // isTransaction = true;
-                        break;
 
 
 

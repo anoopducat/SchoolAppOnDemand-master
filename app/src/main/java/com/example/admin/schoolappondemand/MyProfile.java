@@ -1,5 +1,6 @@
 package com.example.admin.schoolappondemand;
 
+import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.support.v4.util.LruCache;
 import android.support.v7.app.AppCompatActivity;
@@ -23,7 +24,7 @@ import org.json.JSONObject;
 
 public class MyProfile extends AppCompatActivity {
 
-    TextView tv1,uname,ad_no,cls_nm,cls_teacher,mob,father,mother,address;
+    TextView tv1,uname,ad_no,cls_nm,cls_teacher,mob,father,mother,address,emel;
 
     NetworkImageView networkImageView;
 
@@ -38,6 +39,8 @@ public class MyProfile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_profile);
+
+
 
         requestQueue= Volley.newRequestQueue(this);
 
@@ -55,6 +58,11 @@ public class MyProfile extends AppCompatActivity {
 
         networkImageView.setImageUrl("http://schoolappondemand.com/image/StudentImages/index%20c.jpg",mImageLoader);
 
+        final ProgressDialog progressDialog = new ProgressDialog(MyProfile.this);
+        progressDialog.setMessage("Loading...");
+        progressDialog.setCancelable(false);
+        progressDialog.show();
+
         Toolbar toolbar= (Toolbar) findViewById(R.id.toolbar);
 
         setSupportActionBar(toolbar);
@@ -69,15 +77,18 @@ public class MyProfile extends AppCompatActivity {
         father= (TextView) findViewById(R.id.profile_father);
         mother= (TextView) findViewById(R.id.profile_mother);
         address= (TextView) findViewById(R.id.profile_address);
+        emel= (TextView) findViewById(R.id.tv_profile_email);
 
         JsonArrayRequest arrayRequest=new JsonArrayRequest("http://203.124.96.117:8063/Service1.asmx/StudentDetails", new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray jsonArray) {
 
+                progressDialog.dismiss();
+
                 for(int i=0;i<jsonArray.length();i++)
                 {
                     try {
-                        JSONObject object= (JSONObject) jsonArray.get(0);
+                        JSONObject object= (JSONObject) jsonArray.get(892);
 
                          name =object.getString("Name");
                         String className=object.getString("ClassName");
@@ -87,6 +98,7 @@ public class MyProfile extends AppCompatActivity {
                         String fthr=object.getString("Father");
                         String mthr=object.getString("Mother");
                         String add=object.getString("GrAddr");
+                        String eml=object.getString("FatEmail");
 
                         uname.setText(name);
                         tv1.setText(name);
@@ -97,6 +109,7 @@ public class MyProfile extends AppCompatActivity {
                         father.setText(fthr);
                         mother.setText(mthr);
                         address.setText(add);
+                        emel.setText(eml);
 
 
                     } catch (JSONException e) {
