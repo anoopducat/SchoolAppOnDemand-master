@@ -27,6 +27,7 @@
         android:layout_marginLeft="60dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="15dp"
+        android:textStyle="bold"
         android:id="@+id/profile_tv_name" />
 
     <com.android.volley.toolbox.NetworkImageView
@@ -148,6 +149,8 @@
         android:layout_alignLeft="@+id/imageView"
         android:layout_alignStart="@+id/imageView"
         android:layout_marginTop="-30dp"
+        android:layout_marginBottom="5dp"
+        android:textStyle="bold"
         android:id="@+id/t_family" />
     <ImageView
         android:layout_marginLeft="15dp"
@@ -235,7 +238,7 @@
 
 
     <TextView
-        android:text="MyAddress :"
+        android:text="My Address :"
         android:gravity="center"
         android:textColor="@color/colorBlack"
         android:textSize="15sp"
@@ -244,6 +247,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/email"
         android:layout_marginTop="17dp"
+        android:textStyle="bold"
         android:id="@+id/tv_address" />
 
     <TextView

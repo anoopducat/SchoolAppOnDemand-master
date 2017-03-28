@@ -15,7 +15,7 @@
 
     <devs.mulham.horizontalcalendar.HorizontalCalendarView
         android:id="@+id/calendarView"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_below="@id/include"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,7 +26,7 @@
         app:selectedDateBackground="#00ffffff"/>
 
     <LinearLayout
-        android:layout_marginTop="59dp"
+        android:layout_marginTop="19dp"
         android:layout_below="@+id/calendarView"
         android:id="@+id/l1_hmrk"
         android:layout_width="match_parent"
@@ -34,8 +34,10 @@
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_hmrk"
-            android:layout_marginTop=".1dp"
+            android:layout_marginTop="0dp"
             android:layout_width="match_parent"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
             android:layout_height="370dp"></android.support.v7.widget.RecyclerView>
 
     </LinearLayout>

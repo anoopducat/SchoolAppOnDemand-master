@@ -32,6 +32,10 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:25.1.1'
     compile 'com.android.support:design:25.1.1'
     compile 'com.sefford:circular-progress-drawable:1.31'
+    compile 'com.github.siyamed:android-shape-imageview:0.9.+@aar'
+    compile 'com.android.volley:volley:1.0.0'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
 }
 
 repositories {
@@ -42,10 +46,6 @@ dependencies {
     compile 'devs.mulham.horizontalcalendar:horizontalcalendar:1.0.0'
 }
 
-dependencies {
-
-    compile 'de.hdodenhof:circleimageview:2.1.0'
-}
 dependencies {
     compile 'com.android.support:support-v4:25.+'
 }
@@ -67,4 +67,7 @@ dependencies {
 }
 dependencies {
     compile 'com.android.support:support-v4:25.+'
+}
+dependencies {
+    compile 'com.android.support.constraint:constraint-layout:+'
 }

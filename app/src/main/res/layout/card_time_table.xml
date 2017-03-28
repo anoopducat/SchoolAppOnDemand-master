@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/time_table_cv"
+        android:layout_gravity="center_horizontal"
+        cardview:cardElevation="5dp"
+        cardview:cardCornerRadius="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+      cardview:cardBackgroundColor="#e8e8e8"
+        android:layout_width="match_parent"
+        android:layout_height="110dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_marginTop="12dp"
+                android:id="@+id/tv_day_name"
+                android:text="Day  Name      : "
+                android:layout_marginLeft="15dp"
+                android:textColor="@color/colorBlack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textColor="@color/colorBlack"
+                android:layout_marginTop="10dp"
+                android:text="Day"
+                android:layout_alignLeft="@+id/tv_day_name"
+                android:layout_marginLeft="120dp"
+                android:id="@+id/t_dayname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textColor="@color/colorBlack"
+                android:text="Period Name  :"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="40dp"
+                android:id="@+id/tv_period"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textColor="@color/colorBlack"
+                android:text="Period"
+                android:layout_alignLeft="@+id/tv_period"
+                android:layout_marginLeft="120dp"
+                android:layout_marginTop="40dp"
+                android:id="@+id/t_period"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textColor="@color/colorBlack"
+                android:text="Subject            :"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="70dp"
+                android:id="@+id/tv_subject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_alignLeft="@+id/tv_subject"
+                android:layout_marginTop="69dp"
+                android:id="@+id/t_subject"
+                android:text="Subject"
+                android:textColor="@color/colorBlack"
+                android:layout_marginLeft="120dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>

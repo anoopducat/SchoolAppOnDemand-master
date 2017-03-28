@@ -28,12 +28,15 @@ import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.NetworkImageView;
 import com.android.volley.toolbox.Volley;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfilePage extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -47,7 +50,7 @@ public class ProfilePage extends AppCompatActivity
 
     private ImageLoader mImageLoader;
 
-    NetworkImageView networkImageView;
+    CircleImageView circleImageView;
 
 
     @Override
@@ -59,19 +62,11 @@ public class ProfilePage extends AppCompatActivity
         requestQueue= Volley.newRequestQueue(this);
 
 
-        networkImageView= (NetworkImageView) findViewById(R.id.nimageView);
+       circleImageView= (CircleImageView) findViewById(R.id.cimageView);
 
-        mImageLoader = new ImageLoader(requestQueue, new ImageLoader.ImageCache() {
-            private final LruCache<String, Bitmap> mCache = new LruCache<String, Bitmap>(10);
-            public void putBitmap(String url, Bitmap bitmap) {
-                mCache.put(url, bitmap);
-            }
-            public Bitmap getBitmap(String url) {
-                return mCache.get(url);
-            }
-        });
+        Picasso.with(this).load("http://schoolappondemand.com/image/StudentImages/index%20c.jpg").noFade().into(circleImageView);
 
-        networkImageView.setImageUrl("http://schoolappondemand.com/image/StudentImages/index%20c.jpg",mImageLoader);
+
 
         nm= (TextView) findViewById(R.id.title_name);
         cls= (TextView) findViewById(R.id.title_class);
@@ -146,81 +141,82 @@ public class ProfilePage extends AppCompatActivity
         pf6.setImage(R.drawable.d6);
         al.add(pf6);
 
+
         ProfileModel pf7=new ProfileModel();
-        pf7.setName("Assignment");
-        pf7.setImage(R.drawable.d5);
+        pf7.setName("Library");
+        pf7.setImage(R.drawable.d8);
         al.add(pf7);
 
         ProfileModel pf8=new ProfileModel();
-        pf8.setName("Library");
-        pf8.setImage(R.drawable.d8);
+        pf8.setName("Transport");
+        pf8.setImage(R.drawable.d12);
         al.add(pf8);
 
         ProfileModel pf9=new ProfileModel();
-        pf9.setName("Transport");
-        pf9.setImage(R.drawable.d12);
+        pf9.setName("Result");
+        pf9.setImage(R.drawable.d14);
         al.add(pf9);
 
         ProfileModel pf10=new ProfileModel();
-        pf10.setName("Result");
-        pf10.setImage(R.drawable.d14);
+        pf10.setName("Hostal");
+        pf10.setImage(R.drawable.d18);
         al.add(pf10);
 
         ProfileModel pf11=new ProfileModel();
-        pf11.setName("Hostal");
-        pf11.setImage(R.drawable.d18);
+        pf11.setName("Health Care");
+        pf11.setImage(R.drawable.d19);
         al.add(pf11);
 
         ProfileModel pf12=new ProfileModel();
-        pf12.setName("Health Care");
-        pf12.setImage(R.drawable.d19);
+        pf12.setName("Apply Leave");
+        pf12.setImage(R.drawable.d2);
         al.add(pf12);
 
         ProfileModel pf13=new ProfileModel();
-        pf13.setName("Apply Leave");
-        pf13.setImage(R.drawable.d2);
+        pf13.setName("Vehicle Tracking");
+        pf13.setImage(R.drawable.d3);
         al.add(pf13);
 
+
         ProfileModel pf14=new ProfileModel();
-        pf14.setName("Vehicle Tracking");
-        pf14.setImage(R.drawable.d3);
+        pf14.setName("News");
+        pf14.setImage(R.drawable.d11);
         al.add(pf14);
 
-
         ProfileModel pf15=new ProfileModel();
-        pf15.setName("News");
-        pf15.setImage(R.drawable.d11);
+        pf15.setName("Communication");
+        pf15.setImage(R.drawable.d10);
         al.add(pf15);
 
-        ProfileModel pf16=new ProfileModel();
-        pf16.setName("Communication");
-        pf16.setImage(R.drawable.d10);
+        ProfileModel pf16=new ProfileModel();;
+        pf16.setName("Circular");
+        pf16.setImage(R.drawable.d4);
         al.add(pf16);
 
-        ProfileModel pf17=new ProfileModel();;
-        pf17.setName("Circular");
-        pf17.setImage(R.drawable.d4);
+        ProfileModel pf17=new ProfileModel();
+        pf17.setName("BirthDay");
+        pf17.setImage(R.drawable.d16);
         al.add(pf17);
 
         ProfileModel pf18=new ProfileModel();
-        pf18.setName("BirthDay");
-        pf18.setImage(R.drawable.d16);
+        pf18.setName("Download");
+        pf18.setImage(R.drawable.d17);
         al.add(pf18);
 
+
         ProfileModel pf19=new ProfileModel();
-        pf19.setName("Download");
-        pf19.setImage(R.drawable.d17);
+        pf19.setName("Gallery");
+        pf19.setImage(R.drawable.d9);
         al.add(pf19);
 
-
         ProfileModel pf20=new ProfileModel();
-        pf20.setName("Gallery");
-        pf20.setImage(R.drawable.d9);
+        pf20.setName("Achievement");
+        pf20.setImage(R.drawable.d15);
         al.add(pf20);
 
         ProfileModel pf21=new ProfileModel();
-        pf21.setName("Achievement");
-        pf21.setImage(R.drawable.d15);
+        pf21.setName("WWW");
+        pf21.setImage(R.drawable.d20);
         al.add(pf21);
 
 
@@ -279,124 +275,124 @@ public class ProfilePage extends AppCompatActivity
                         // fragmentToLaunch=new TimeTable();
                         // isTransaction = true;
                         break;
-                    case 6:
-                        Intent i5=new Intent(ProfilePage.this,StudentAssignment.class);
-                        startActivity(i5);
-                        // fragmentToLaunch=new Assignment();
-                        // isTransaction = true;
-                        break;
 
-                    case 7:
-                        Intent i6=new Intent(ProfilePage.this,Library.class);
-                        startActivity(i6);
+                    case 6:
+                        Intent i5=new Intent(ProfilePage.this,Library.class);
+                        startActivity(i5);
                         //fragmentToLaunch=new Library();
                         //isTransaction = true;
                         break;
 
-                    case 8:
-                        Intent i7=new Intent(ProfilePage.this,Transport.class);
-                        startActivity(i7);
+                    case 7:
+                        Intent i6=new Intent(ProfilePage.this,Transport.class);
+                        startActivity(i6);
                         // fragmentToLaunch=new Transport();
                         // isTransaction = true;
                         break;
 
+                    case 8:
+
+                        Intent i7=new Intent(ProfilePage.this,ExamResult.class);
+                        startActivity(i7);
+                        //fragmentToLaunch=new ExamResult();
+                        //isTransaction = true;
+                        break;
+
                     case 9:
 
-                        Intent i8=new Intent(ProfilePage.this,ExamResult.class);
+                        Intent i8=new Intent(ProfilePage.this,Hostal.class);
                         startActivity(i8);
-                        //fragmentToLaunch=new ExamResult();
+                        //fragmentToLaunch=new Hostal();
                         //isTransaction = true;
                         break;
 
                     case 10:
 
-                        Intent i9=new Intent(ProfilePage.this,Hostal.class);
+                        Intent i9=new Intent(ProfilePage.this,HealthCare.class);
                         startActivity(i9);
-                        //fragmentToLaunch=new Hostal();
-                        //isTransaction = true;
+                        //  fragmentToLaunch=new HealthCare();
+                        // isTransaction = true;
                         break;
 
                     case 11:
 
-                        Intent i10=new Intent(ProfilePage.this,HealthCare.class);
+                        Intent i10=new Intent(ProfilePage.this,ApplyLeave.class);
                         startActivity(i10);
-                        //  fragmentToLaunch=new HealthCare();
+                        // fragmentToLaunch=new ApplyLeave();
                         // isTransaction = true;
                         break;
 
                     case 12:
 
-                        Intent i11=new Intent(ProfilePage.this,ApplyLeave.class);
+                        Intent i11=new Intent(ProfilePage.this,VehicleTracking.class);
                         startActivity(i11);
-                        // fragmentToLaunch=new ApplyLeave();
-                        // isTransaction = true;
-                        break;
-
-                    case 13:
-
-                        Intent i12=new Intent(ProfilePage.this,VehicleTracking.class);
-                        startActivity(i12);
                         //fragmentToLaunch=new VehicleTraining();
                         // isTransaction = true;
                         break;
 
-                    case 14:
-                        Intent i13=new Intent(ProfilePage.this,News.class);
-                        startActivity(i13);
+                    case 13:
+                        Intent i12=new Intent(ProfilePage.this,News.class);
+                        startActivity(i12);
 
                         //fragmentToLaunch=new Neaws();
                         //isTransaction = true;
                         break;
 
-                    case 15:
+                    case 14:
 
-                        Intent i14=new Intent(ProfilePage.this,Communication.class);
-                        startActivity(i14);
+                        Intent i13=new Intent(ProfilePage.this,Communication.class);
+                        startActivity(i13);
                         //fragmentToLaunch=new Communication();
                         // isTransaction = true;
                         break;
 
-                    case 16:
-                        Intent i15=new Intent(ProfilePage.this,Circular.class);
-                        startActivity(i15);
+                    case 15:
+                        Intent i14=new Intent(ProfilePage.this,Circular.class);
+                        startActivity(i14);
 
                         //fragmentToLaunch=new Circular();
                         //isTransaction = true;
                         break;
 
-                    case 17:
+                    case 16:
 
-                        Intent i16=new Intent(ProfilePage.this,Birthday.class);
-                        startActivity(i16);
+                        Intent i15=new Intent(ProfilePage.this,Birthday.class);
+                        startActivity(i15);
                         // fragmentToLaunch=new BirthDay();
                         //isTransaction = true;
                         break;
 
-                    case 18:
-                        Intent i17=new Intent(ProfilePage.this,Download.class);
-                        startActivity(i17);
+                    case 17:
+                        Intent i16=new Intent(ProfilePage.this,Download.class);
+                        startActivity(i16);
 
                         // fragmentToLaunch=new Download();
                         //isTransaction = true;
                         break;
 
-                    case 19:
-                        Intent i18=new Intent(ProfilePage.this,Gallery.class);
-                        startActivity(i18);
+                    case 18:
+                        Intent i17=new Intent(ProfilePage.this,Gallery.class);
+                        startActivity(i17);
 
                         // fragmentToLaunch=new Gallery();
                         // isTransaction = true;
                         break;
 
-                    case 20:
+                    case 19:
 
-                        Intent i19=new Intent(ProfilePage.this,Achievement.class);
-                        startActivity(i19);
+                        Intent i18=new Intent(ProfilePage.this,Achievement.class);
+                        startActivity(i18);
                         //fragmentToLaunch=new Achievement();
                         // isTransaction = true;
                         break;
 
 
+                    case 20:
+                        Intent i19=new Intent(ProfilePage.this,MySchoolWeb.class);
+                        startActivity(i19);
+                        // fragmentToLaunch=new Assignment();
+                        // isTransaction = true;
+                        break;
 
 
 

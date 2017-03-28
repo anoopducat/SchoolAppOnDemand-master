@@ -26,7 +26,8 @@ public class MyProfile extends AppCompatActivity {
 
     TextView tv1,uname,ad_no,cls_nm,cls_teacher,mob,father,mother,address,emel;
 
-    NetworkImageView networkImageView;
+    NetworkImageView ntwrkiv;
+
 
     RequestQueue requestQueue;
 
@@ -44,7 +45,8 @@ public class MyProfile extends AppCompatActivity {
 
         requestQueue= Volley.newRequestQueue(this);
 
-        networkImageView= (NetworkImageView) findViewById(R.id.imageView);
+        ntwrkiv= (NetworkImageView) findViewById(R.id.imageView);
+
 
         mImageLoader = new ImageLoader(requestQueue, new ImageLoader.ImageCache() {
             private final LruCache<String, Bitmap> mCache = new LruCache<String, Bitmap>(10);
@@ -56,7 +58,9 @@ public class MyProfile extends AppCompatActivity {
             }
         });
 
-        networkImageView.setImageUrl("http://schoolappondemand.com/image/StudentImages/index%20c.jpg",mImageLoader);
+
+       //circularNetworkImageView.setImageUrl("http://schoolappondemand.com/image/StudentImages/index%20c.jpg",imageLoader);
+        ntwrkiv.setImageUrl("http://schoolappondemand.com/image/StudentImages/index%20c.jpg",mImageLoader);
 
         final ProgressDialog progressDialog = new ProgressDialog(MyProfile.this);
         progressDialog.setMessage("Loading...");
@@ -101,7 +105,7 @@ public class MyProfile extends AppCompatActivity {
                         String eml=object.getString("FatEmail");
 
                         uname.setText(name);
-                        tv1.setText(name);
+                        //tv1.setText(name);
                         ad_no.setText(admission);
                         cls_nm.setText(className);
                         cls_teacher.setText(teacher);
@@ -132,6 +136,8 @@ public class MyProfile extends AppCompatActivity {
         //getSupportActionBar().setLogo(R.drawable.imagecircle);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        tv1.setText("My Profile");
 
 
 

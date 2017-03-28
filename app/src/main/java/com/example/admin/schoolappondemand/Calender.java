@@ -79,6 +79,8 @@ public class Calender extends AppCompatActivity {
             }
         });
 
+        materialCalendarView.addDecorator(new SunDay());
+
         //materialCalendarView.addDecorator(new OneDayDecorator(R.color.colorGreen,set));
     }
 }

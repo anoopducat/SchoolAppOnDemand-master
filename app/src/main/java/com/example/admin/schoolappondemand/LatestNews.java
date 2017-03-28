@@ -13,54 +13,62 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 /**
- * Created by admin on 3/23/2017.
+ * Created by admin on 3/24/2017.
  */
 
-public class SchoolNewsAdapter extends RecyclerView.Adapter<SchoolNewsAdapter.Myholder> {
+public class LatestNews extends RecyclerView.Adapter<LatestNews.MyHolder> {
 
     ArrayList<NewsModel> Al=new ArrayList<>();
     int res;
     Activity obj;
 
-    public SchoolNewsAdapter(Activity obj, int res, ArrayList<NewsModel> Al) {
+    public LatestNews(int res,Activity obj,ArrayList<NewsModel> Al) {
         this.Al=Al;
         this.res = res;
         this.obj = obj;
     }
 
+
+
+
     @Override
-    public SchoolNewsAdapter.Myholder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public LatestNews.MyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         View view= LayoutInflater.from(obj).inflate(res,parent,false);
 
-        Myholder myholder=new Myholder(view);
+        MyHolder holder=new MyHolder(view);
 
-
-
-        return myholder;
+        return holder;
     }
 
     @Override
-    public void onBindViewHolder(SchoolNewsAdapter.Myholder holder, int position) {
+    public void onBindViewHolder(LatestNews.MyHolder holder, int position) {
+
+        NewsModel model=Al.get(position);
+
+        holder.iv.setImageResource(model.getNwimg());
+        holder.heading.setText(model.getNwsheading());
+        holder.dt.setText(model.getNwsdt());
+        holder.news.setText(model.getNws());
+
+
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return Al.size();
     }
 
-    public class Myholder extends RecyclerView.ViewHolder {
+    public class MyHolder extends RecyclerView.ViewHolder {
 
         CardView cardView;
         ImageView iv;
         TextView heading,dt,news;
         Button mrdtl;
 
-
-        public Myholder(View itemView) {
+        public MyHolder(View itemView) {
             super(itemView);
-
 
             cardView= (CardView) itemView.findViewById(R.id.crd_nws);
             iv= (ImageView) itemView.findViewById(R.id.iv_nws_title);

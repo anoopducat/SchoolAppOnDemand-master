@@ -4,17 +4,20 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.TextView;
 
-public class Download extends AppCompatActivity {
+public class MySchoolWeb extends AppCompatActivity {
 
+    WebView webView;
     TextView tv1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_download);
-
+        setContentView(R.layout.activity_my_school_web);
 
         Toolbar toolbar= (Toolbar) findViewById(R.id.toolbar);
 
@@ -25,6 +28,7 @@ public class Download extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayUseLogoEnabled(true);
+
         toolbar.setNavigationIcon(R.drawable.back_btn);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,6 +37,16 @@ public class Download extends AppCompatActivity {
             }
         });
 
-        tv1.setText("Download");
+        tv1.setText("WWW");
+
+        webView= (WebView) findViewById(R.id.webv);
+        WebSettings webSettings=webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+
+        webView.setWebViewClient(new WebViewClient());
+
+        webView.loadData("<iframe src=\"https://www.hrsoftwaresolution.com/schoolappondemand\"></iframe>", "text/html",
+                "utf-8");
+
     }
 }

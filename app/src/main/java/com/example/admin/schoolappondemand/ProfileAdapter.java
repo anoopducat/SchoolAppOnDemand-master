@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 /**
  * Created by admin on 3/1/2017.
  */
@@ -46,7 +48,7 @@ public class ProfileAdapter extends BaseAdapter {
 
         View vv= LayoutInflater.from(obj).inflate(res,parent,false);
 
-        ImageView iv= (ImageView) vv.findViewById(R.id.iv_grid);
+        CircleImageView iv= (CircleImageView) vv.findViewById(R.id.iv_grid);
         TextView tv= (TextView) vv.findViewById(R.id.tv_name);
 
         ProfileModel pf=Al.get(position);

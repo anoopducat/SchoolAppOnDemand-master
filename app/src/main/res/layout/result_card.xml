@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/result_cv"
+        android:layout_gravity="center_horizontal"
+        cardview:cardElevation="5dp"
+        cardview:cardCornerRadius="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        cardview:cardBackgroundColor="#e8e8e8"
+        android:layout_width="match_parent"
+        android:layout_height="110dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            android:text="Subject Group Name     : "
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/tv_sub_grp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/sub_grp_nm"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="220dp"
+            android:layout_alignLeft="@+id/tv_sub_grp"
+            android:text="Name"
+            android:textSize="15sp"
+            android:textColor="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            android:text="Subject Name                 : "
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:id="@+id/tv_sub"
+            android:layout_below="@id/tv_sub_grp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginLeft="220dp"
+            android:layout_marginTop="10dp"
+            android:text="Subject"
+            android:id="@+id/subjct"
+            android:textSize="15sp"
+            android:textColor="@color/colorBlack"
+            android:layout_alignLeft="@+id/tv_sub"
+            android:layout_below="@id/tv_sub_grp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textSize="15sp"
+            android:textColor="@color/colorBlack"
+            android:text="Obtained Marks              :"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@+id/tv_sub"
+            android:id="@+id/tv_obtained"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textSize="15sp"
+            android:textColor="@color/colorBlack"
+            android:text="Obtained"
+            android:layout_alignLeft="@+id/tv_obtained"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="220dp"
+            android:layout_below="@+id/tv_sub"
+            android:id="@+id/obtained_marks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:textColor="@color/colorBlack"
+            android:textSize="15sp"
+            android:text="Full Marks                        :"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@+id/tv_obtained"
+            android:id="@+id/tv_full_mrk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:textSize="15sp"
+            android:textColor="@color/colorBlack"
+            android:text="Full"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="220dp"
+            android:layout_below="@id/tv_obtained"
+            android:id="@+id/full_mrk"
+            android:layout_alignLeft="@+id/tv_obtained"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

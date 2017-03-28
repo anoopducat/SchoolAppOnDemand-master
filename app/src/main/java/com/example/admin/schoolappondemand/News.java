@@ -14,29 +14,37 @@ public class News extends AppCompatActivity {
     TextView tv1;
 
     RecyclerView recyclerView;
-    ArrayList<NewsModel> Al=new ArrayList<>();
+    ArrayList<NewsModel> arrayList=new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
 
-        recyclerView= (RecyclerView) findViewById(R.id.rv_nws);
+        recyclerView= (RecyclerView) findViewById(R.id.rv_nws1);
 
         NewsModel newsModel=new NewsModel();
         newsModel.setNwimg(R.drawable.news);
         newsModel.setNwsheading("QUIZ ON ELECTI.....");
         newsModel.setNwsdt("24 Jan 2017");
-
         newsModel.setNws("After a poor show in the just-concluded assembly elections, BSP chief Mayawati and AAP leader Arvind Kejriwal alleged tampering of EVMs and sought a probe.");
-        Al.add(newsModel);
-        Al.add(newsModel);
-        Al.add(newsModel);
-        Al.add(newsModel);
-        Al.add(newsModel);
+        arrayList.add(newsModel);
+        arrayList.add(newsModel);
+        arrayList.add(newsModel);
+        arrayList.add(newsModel);
+        arrayList.add(newsModel);
+        arrayList.add(newsModel);
+        arrayList.add(newsModel);
 
-        SchoolNewsAdapter obj=new SchoolNewsAdapter(this,R.layout.card_school_news,Al);
+
+
+       LatestNews obj=new LatestNews(R.layout.card_school_news, this,arrayList);
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(obj);
+
+
+
 
 
         Toolbar toolbar= (Toolbar) findViewById(R.id.toolbar);
