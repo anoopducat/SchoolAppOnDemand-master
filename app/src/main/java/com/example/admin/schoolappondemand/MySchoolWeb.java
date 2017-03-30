@@ -4,6 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -18,6 +21,8 @@ public class MySchoolWeb extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_school_web);
+       // requestWindowFeature(Window.FEATURE_NO_TITLE);
+        //this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         Toolbar toolbar= (Toolbar) findViewById(R.id.toolbar);
 
@@ -45,7 +50,13 @@ public class MySchoolWeb extends AppCompatActivity {
 
         webView.setWebViewClient(new WebViewClient());
 
-        webView.loadData("<iframe src=\"https://www.hrsoftwaresolution.com/schoolappondemand\"></iframe>", "text/html",
+
+       // webView.loadUrl("https://www.hrsoftwaresolution.com/schoolappondemand")
+        // ;
+
+        webView.setWebChromeClient(new WebChromeClient());
+
+        webView.loadData("<iframe src=\"https://www.hrsoftwaresolution.com/schoolappondemand\" width=\"100%\" height=\"400%\"></iframe>", "text/html",
                 "utf-8");
 
     }

@@ -12,4 +12,32 @@
         android:layout_height="wrap_content"
         android:id="@+id/include" />
 
+    <ImageView
+        android:background="@color/colorWhite"
+        android:src="@drawable/d17"
+        android:layout_marginTop="55dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/dwld_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/include"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="DownLoad "
+        android:id="@+id/dnld"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/dwld_iv" />
+
+    <Button
+        android:id="@+id/btn_vw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/dnld"
+        android:layout_marginStart="15dp"
+        android:layout_toEndOf="@+id/dwld_iv"
+        android:text="View" />
+
 </RelativeLayout>

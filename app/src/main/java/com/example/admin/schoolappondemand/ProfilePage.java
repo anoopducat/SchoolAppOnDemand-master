@@ -82,7 +82,7 @@ public class ProfilePage extends AppCompatActivity
                         JSONObject object= (JSONObject) jsonArray.get(892);
 
                         String name =object.getString("Name");
-                        String className=object.getString("ClassName");
+                        String className=object.getString("ClassSection");
 
                         nm.setText(name);
                         cls.setText(className);
@@ -98,7 +98,7 @@ public class ProfilePage extends AppCompatActivity
             @Override
             public void onErrorResponse(VolleyError volleyError) {
 
-                Toast.makeText(ProfilePage.this, "" + volleyError, Toast.LENGTH_SHORT).show();
+                Toast.makeText(ProfilePage.this, "" + volleyError.getMessage(), Toast.LENGTH_SHORT).show();
 
             }
         });

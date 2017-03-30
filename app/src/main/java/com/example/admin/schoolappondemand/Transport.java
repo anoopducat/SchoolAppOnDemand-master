@@ -10,18 +10,21 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class Transport extends AppCompatActivity {
 
     TextView tv1;
-    ImageButton imbtn1,imbtn2,imbtn3;
+    ImageButton imbtn2,imbtn3;
     FragmentManager fm;
+    CircleImageView circleImageView,circleImageView1,circleImageView2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transport);
-         imbtn1= (ImageButton) findViewById(R.id.iv_btn_bs);
-        imbtn2= (ImageButton) findViewById(R.id.driver);
-        imbtn3= (ImageButton) findViewById(R.id.incharger);
+        circleImageView= (CircleImageView) findViewById(R.id.iv_btn_bs);
+        circleImageView1= (CircleImageView) findViewById(R.id.driver);
+        circleImageView2= (CircleImageView) findViewById(R.id.incharger);
         Toolbar toolbar= (Toolbar) findViewById(R.id.toolbar);
 
         tv1= (TextView) findViewById(R.id.profile_tv);
@@ -42,7 +45,7 @@ public class Transport extends AppCompatActivity {
 
         tv1.setText("Transport");
 
-    imbtn1.setOnClickListener(new View.OnClickListener() {
+    circleImageView.setOnClickListener(new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             fm=getSupportFragmentManager();
@@ -54,7 +57,7 @@ public class Transport extends AppCompatActivity {
         }
     });
 
-        imbtn2.setOnClickListener(new View.OnClickListener() {
+        circleImageView1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 fm=getSupportFragmentManager();
@@ -66,7 +69,7 @@ public class Transport extends AppCompatActivity {
             }
         });
 
-        imbtn3.setOnClickListener(new View.OnClickListener() {
+        circleImageView2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 fm=getSupportFragmentManager();

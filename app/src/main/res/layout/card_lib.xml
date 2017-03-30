@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/crd_lib"
+        android:layout_gravity="center_horizontal"
+        cardview:cardElevation="14dp"
+        cardview:cardCornerRadius="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:padding="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp"
+                android:text="Accession No  :"
+                android:id="@+id/tv_acsn_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_alignLeft="@+id/tv_acsn_no"
+                android:layout_marginLeft="130dp"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="15sp"
+                android:text="No"
+                android:id="@+id/accessn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_titl"
+                android:text="Title                   :"
+                android:textSize="15sp"
+                android:textColor="@color/colorBlack"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@id/tv_acsn_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_alignLeft="@+id/tv_acsn_no"
+                android:text="Title"
+                android:id="@+id/tile"
+                android:textColor="@color/colorBlack"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="130dp"
+                android:layout_below="@id/tv_acsn_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_subtitl"
+                android:text="Sub Title           :"
+                android:textSize="15sp"
+                android:textColor="@color/colorBlack"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@id/tv_titl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_alignLeft="@+id/tv_acsn_no"
+                android:text="Sub Title"
+                android:id="@+id/Sub_tile"
+                android:textColor="@color/colorBlack"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="130dp"
+                android:layout_below="@id/tv_titl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:id="@+id/tv_bkedsn"
+                android:text="Book Edition    :"
+                android:textSize="15sp"
+                android:textColor="@color/colorBlack"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@id/tv_subtitl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_alignLeft="@+id/tv_bkedsn"
+                android:text="Book Edition"
+                android:id="@+id/bk_edsn"
+                android:textColor="@color/colorBlack"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="130dp"
+                android:layout_below="@id/tv_subtitl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+
+            <TextView
+                android:id="@+id/tv_issuedt"
+                android:text="Issue Date        :"
+                android:textSize="15sp"
+                android:textColor="@color/colorBlack"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@id/tv_bkedsn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_alignLeft="@+id/tv_acsn_no"
+                android:text="Issue Date"
+                android:id="@+id/iss_dt"
+                android:textColor="@color/colorBlack"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="130dp"
+                android:layout_below="@id/tv_bkedsn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <TextView
+                android:id="@+id/tv_rtrndt"
+                android:text="Return Date      :"
+                android:textSize="15sp"
+                android:textColor="@color/colorBlack"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@id/tv_issuedt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_alignLeft="@+id/tv_acsn_no"
+                android:text="Return Date"
+                android:id="@+id/rtrn_dt"
+                android:textColor="@color/colorBlack"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="130dp"
+                android:layout_below="@id/tv_issuedt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tv_dudt"
+                android:text="Due Date           :"
+                android:textSize="15sp"
+                android:textColor="@color/colorBlack"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@id/tv_rtrndt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_alignLeft="@+id/tv_acsn_no"
+                android:text="Due Date"
+                android:id="@+id/du_dt"
+                android:textColor="@color/colorBlack"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="130dp"
+                android:layout_below="@id/tv_rtrndt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+
+        </RelativeLayout>
+
+
+
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

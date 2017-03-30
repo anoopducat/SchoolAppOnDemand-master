@@ -1,27 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_library"
+    android:id="@+id/activity_news"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.admin.schoolappondemand.Library">
+    tools:context="com.example.admin.schoolappondemand.News">
 
     <include
         layout="@layout/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/include" />
-
-
-   <ImageView
-       android:src="@drawable/information_img"
-       android:layout_marginLeft="10dp"
-       android:layout_marginTop="92dp"
-       android:id="@+id/iv_lbry"
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_marginEnd="64dp"
-       android:layout_below="@+id/include"
-       android:layout_alignParentEnd="true" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/lib_rv"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_below="@+id/include"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
 
 </RelativeLayout>
