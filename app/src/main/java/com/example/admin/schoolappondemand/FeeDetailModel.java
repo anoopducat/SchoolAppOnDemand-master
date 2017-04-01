@@ -3,54 +3,99 @@ package com.example.admin.schoolappondemand;
 import java.io.Serializable;
 
 /**
- * Created by admin on 3/9/2017.
+ * Created by admin on 4/1/2017.
  */
 
 public class FeeDetailModel implements Serializable {
 
-    private String feetype;
-    private String feetotal;
-    private String feepaid;
-    private String feedue;
-    private String feedate;
+    private String recept;
+    private String fedepe;
+    private String tofe;
+    private String fine;
+    private String consesn;
+    private String hostalcha;
+    private String netfe;
+    private String pefe;
+    private String blfe;
+    private String pementtype;
 
-    public String getFeetype() {
-        return feetype;
+    public String getRecept() {
+        return recept;
     }
 
-    public void setFeetype(String feetype) {
-        this.feetype = feetype;
+    public void setRecept(String recept) {
+        this.recept = recept;
     }
 
-    public String getFeetotal() {
-        return feetotal;
+    public String getFedepe() {
+        return fedepe;
     }
 
-    public void setFeetotal(String feetotal) {
-        this.feetotal = feetotal;
+    public void setFedepe(String fedepe) {
+        this.fedepe = fedepe;
     }
 
-    public String getFeepaid() {
-        return feepaid;
+    public String getTofe() {
+        return tofe;
     }
 
-    public void setFeepaid(String feepaid) {
-        this.feepaid = feepaid;
+    public void setTofe(String tofe) {
+        this.tofe = tofe;
     }
 
-    public String getFeedue() {
-        return feedue;
+    public String getFine() {
+        return fine;
     }
 
-    public void setFeedue(String feedue) {
-        this.feedue = feedue;
+    public void setFine(String fine) {
+        this.fine = fine;
     }
 
-    public String getFeedate() {
-        return feedate;
+    public String getConsesn() {
+        return consesn;
     }
 
-    public void setFeedate(String feedate) {
-        this.feedate = feedate;
+    public void setConsesn(String consesn) {
+        this.consesn = consesn;
+    }
+
+    public String getHostalcha() {
+        return hostalcha;
+    }
+
+    public void setHostalcha(String hostalcha) {
+        this.hostalcha = hostalcha;
+    }
+
+    public String getNetfe() {
+        return netfe;
+    }
+
+    public void setNetfe(String netfe) {
+        this.netfe = netfe;
+    }
+
+    public String getPefe() {
+        return pefe;
+    }
+
+    public void setPefe(String pefe) {
+        this.pefe = pefe;
+    }
+
+    public String getBlfe() {
+        return blfe;
+    }
+
+    public void setBlfe(String blfe) {
+        this.blfe = blfe;
+    }
+
+    public String getPementtype() {
+        return pementtype;
+    }
+
+    public void setPementtype(String pementtype) {
+        this.pementtype = pementtype;
     }
 }

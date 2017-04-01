@@ -9,7 +9,9 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -28,6 +30,8 @@ public class Fee extends AppCompatActivity {
 
     RequestQueue requestQueue;
 
+    String url ="http://203.124.96.117:8063/Service1.asmx/Fee";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,42 +45,44 @@ public class Fee extends AppCompatActivity {
         du= (TextView) findViewById(R.id.due_fee);
         ntl= (TextView) findViewById(R.id.nt_ttl);
 
-        JsonArrayRequest jsn=new JsonArrayRequest("http://203.124.96.117:8063/Service1.asmx/Fee", new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray jsonArray) {
+      JsonArrayRequest jsonArrayRequest=new JsonArrayRequest(Request.Method.POST, url, null, new Response.Listener<JSONArray>() {
+          @Override
+          public void onResponse(JSONArray response) {
 
-                for(int i=0;i<jsonArray.length();i++)
-                {
-                    try {
-                        JSONObject object= (JSONObject) jsonArray.get(67);
+              for(int i=0;i<response.length();i++)
+              {
 
-                        String total =object.getString("TotalFee");
-                        String fdue=object.getString("Balance");
-                        String ntotal=object.getString("NetTotal");
+                  try {
+                      JSONObject object= (JSONObject) response.get(10);
 
-
-
-                        tf.setText(total);
-                        tl.setText(total);
-                        du.setText(fdue);
-                        ntl.setText(ntotal);
+                      String total =object.getString("TotalFee");
+                      String fdue=object.getString("Balance");
+                      String ntotal=object.getString("NetTotal");
 
 
 
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
+                      tf.setText(total);
+                      tl.setText(total);
+                      du.setText(fdue);
+                      ntl.setText(ntotal);
 
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError volleyError) {
 
-            }
-        });
-        requestQueue.add(jsn);
+                  } catch (JSONException e) {
+                      e.printStackTrace();
+                  }
+              }
 
+          }
+      }, new Response.ErrorListener() {
+          @Override
+          public void onErrorResponse(VolleyError error) {
+
+              Toast.makeText(Fee.this, "" + error, Toast.LENGTH_SHORT).show();
+
+          }
+      });
+
+        requestQueue.add(jsonArrayRequest);
 
         Toolbar toolbar= (Toolbar) findViewById(R.id.toolbar);
 

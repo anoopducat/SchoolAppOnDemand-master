@@ -21,6 +21,7 @@ import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -52,6 +53,8 @@ public class ProfilePage extends AppCompatActivity
 
     CircleImageView circleImageView;
 
+    String url ="http://203.124.96.117:8063/Service1.asmx/StudentDetails";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +63,37 @@ public class ProfilePage extends AppCompatActivity
 
 
         requestQueue= Volley.newRequestQueue(this);
+
+        JsonArrayRequest jsonArrayRequest=new JsonArrayRequest(Request.Method.POST, url, null, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+
+                for(int i=0;i<response.length();i++)
+                {
+                    try {
+                        JSONObject object= (JSONObject) response.get(481);
+
+                        String name =object.getString("Name");
+                        String className=object.getString("ClassSection");
+
+                        nm.setText(name);
+                        cls.setText(className);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                Toast.makeText(ProfilePage.this, ""+error.getMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        requestQueue.add(jsonArrayRequest);
 
 
        circleImageView= (CircleImageView) findViewById(R.id.cimageView);
@@ -72,38 +106,6 @@ public class ProfilePage extends AppCompatActivity
         cls= (TextView) findViewById(R.id.title_class);
 
 
-        JsonArrayRequest jsn=new JsonArrayRequest("http://203.124.96.117:8063/Service1.asmx/StudentDetails", new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray jsonArray) {
-
-                for(int i=0;i<jsonArray.length();i++)
-                {
-                    try {
-                        JSONObject object= (JSONObject) jsonArray.get(892);
-
-                        String name =object.getString("Name");
-                        String className=object.getString("ClassSection");
-
-                        nm.setText(name);
-                        cls.setText(className);
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-
-                }
-
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError volleyError) {
-
-                Toast.makeText(ProfilePage.this, "" + volleyError.getMessage(), Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
-        requestQueue.add(jsn);
 
         gridView= (GridView) findViewById(R.id.gv1);
         gridView.setVerticalSpacing(5);

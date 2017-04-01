@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -31,6 +32,8 @@ public class Circular extends AppCompatActivity {
 
     ArrayList<CircularModel> Al=new ArrayList<>();
 
+    String url ="http://203.124.96.117:8063/Service1.asmx/Circulars";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,49 +44,51 @@ public class Circular extends AppCompatActivity {
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        JsonArrayRequest jsonArrayRequest=new JsonArrayRequest("http://203.124.96.117:8063/Service1.asmx/Circulars", new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray jsonArray) {
 
-                for(int i=0;i<jsonArray.length();i++){
-                    CircularModel c1=new CircularModel();
+        JsonArrayRequest jsonArrayRequest=new JsonArrayRequest(Request.Method.POST, url, null, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+
+                for(int i=0;i<response.length();i++)
+                {
+                    CircularModel model=new CircularModel();
 
                     try {
-                        JSONObject object= (JSONObject) jsonArray.get(i);
+                        JSONObject object= (JSONObject) response.get(i);
+
 
                         String crdet=object.getString("CreatedDate");
                         String adnm=object.getString("EmpName");
                         String crdes=object.getString("Message");
 
-                        c1.setDtname(crdet);
-                        c1.setNem(adnm);
-                        c1.setDescription(crdes);
+                        model.setDtname(crdet);
+                        model.setNem(adnm);
+                        model.setDescription(crdes);
 
-                        Al.add(c1);
+                        Al.add(model);
 
                         CircularAdapter obj=new CircularAdapter(Circular.this,R.layout.circular_card,Al);
 
                         recyclerView.setAdapter(obj);
 
-
-
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
-
                 }
 
             }
         }, new Response.ErrorListener() {
             @Override
-            public void onErrorResponse(VolleyError volleyError) {
+            public void onErrorResponse(VolleyError error) {
 
-                Toast.makeText(Circular.this, "" + volleyError, Toast.LENGTH_SHORT).show();
+                Toast.makeText(Circular.this, "" + error, Toast.LENGTH_SHORT).show();
+
 
             }
         });
 
         requestQueue.add(jsonArrayRequest);
+
 
         Toolbar toolbar= (Toolbar) findViewById(R.id.toolbar);
 

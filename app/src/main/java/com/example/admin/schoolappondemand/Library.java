@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -32,6 +33,8 @@ public class Library extends AppCompatActivity {
 
     ArrayList<LibreryModel> arrayList=new ArrayList<>();
 
+    String url ="http://203.124.96.117:8063/Service1.asmx/Library";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,16 +44,18 @@ public class Library extends AppCompatActivity {
 
         recyclerView= (RecyclerView) findViewById(R.id.lib_rv);
 
-        JsonArrayRequest jsonArrayRequest=new JsonArrayRequest("http://203.124.96.117:8063/Service1.asmx/Library", new Response.Listener<JSONArray>() {
+
+        JsonArrayRequest jsonArrayRequest=new JsonArrayRequest(Request.Method.POST, url, null, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
 
-                for(int i=0;i<response.length();i++)
-                {
-                    LibreryModel model=new LibreryModel();
+                for(int i=0;i<response.length();i++){
+                     LibreryModel  model=new LibreryModel();
+
 
                     try {
                         JSONObject object= (JSONObject) response.get(i);
+
 
                         String no=object.getString("AccessionNo");
                         String bokktitle=object.getString("Title");
@@ -74,6 +79,8 @@ public class Library extends AppCompatActivity {
 
                         recyclerView.setAdapter(obj);
 
+
+
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
@@ -86,10 +93,11 @@ public class Library extends AppCompatActivity {
 
                 Toast.makeText(Library.this, "" +error, Toast.LENGTH_SHORT).show();
 
+
             }
         });
-        requestQueue.add(jsonArrayRequest);
 
+        requestQueue.add(jsonArrayRequest);
 
        //// LibreryModel model=new LibreryModel();
        // model.setAcsnno("7");

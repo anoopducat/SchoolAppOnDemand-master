@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -29,6 +30,8 @@ public class TimeTable extends AppCompatActivity {
 
     ArrayList<TimeTableModel> arrayList=new ArrayList<>();
 
+    String url ="http://203.124.96.117:8063/Service1.asmx/TimeTable";
+
     RequestQueue requestQueue;
 
     @Override
@@ -42,82 +45,57 @@ public class TimeTable extends AppCompatActivity {
 
 
 
-        JsonArrayRequest jsonArrayRequest=new JsonArrayRequest("url", new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray response) {
+       JsonArrayRequest jsonArrayRequest=new JsonArrayRequest(Request.Method.POST, url, null, new Response.Listener<JSONArray>() {
+           @Override
+           public void onResponse(JSONArray response) {
 
-                for(int i=0;i<response.length();i++){
-                   // TimeTableModel tmdl=new TimeTableModel();
+               for(int i=0;i<response.length();i++)
+               {
+                   TimeTableModel model=new TimeTableModel();
 
-                    try {
-                        JSONObject object= (JSONObject) response.get(i);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
+                   try {
+                       JSONObject object= (JSONObject) response.get(i);
 
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
+                       String ttday=object.getString("Day_Desc");
+                       String ttprd=object.getString("Lecture");
+                       String ttsbj=object.getString("SubEmp");
 
-                Toast.makeText(TimeTable.this, "" + error, Toast.LENGTH_SHORT).show();
+                       model.setTtday(ttday);
+                       model.setTtperiod(ttprd);
+                       model.setTtsubct(ttsbj);
 
-            }
-        });
-         requestQueue.add(jsonArrayRequest);
+                       arrayList.add(model);
+
+                       TimeTableAdapter obj=new TimeTableAdapter(TimeTable.this,R.layout.card_time_table,arrayList);
+
+                       recyclerView.setAdapter(obj);
+
+
+
+                   } catch (JSONException e) {
+                       e.printStackTrace();
+                   }
+               }
+
+           }
+       }, new Response.ErrorListener() {
+           @Override
+           public void onErrorResponse(VolleyError error) {
+
+               Toast.makeText(TimeTable.this, "" + error, Toast.LENGTH_SHORT).show();
+
+           }
+       });
+
+        requestQueue.add(jsonArrayRequest);
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         Toolbar toolbar= (Toolbar) findViewById(R.id.toolbar);
 
         tv1= (TextView) findViewById(R.id.profile_tv);
 
-        TimeTableModel tmdl=new TimeTableModel();
-        tmdl.setTtday("Monday");
-        tmdl.setTtperiod("1");
-        tmdl.setTtsubct("Art and Craft-Manmeet Kaur [EMP0005]");
-        arrayList.add(tmdl);
 
-        TimeTableModel tmdl1=new TimeTableModel();
-        tmdl1.setTtday("Friday");
-        tmdl1.setTtperiod("2");
-        tmdl1.setTtsubct("Hindi-Manmeet Kaur [EMP0005]");
-        arrayList.add(tmdl1);
-
-        TimeTableModel tmdl2=new TimeTableModel();
-        tmdl2.setTtday("Saturday");
-        tmdl2.setTtperiod("3");
-        tmdl2.setTtsubct("Hindi-Manmeet Kaur [EMP0005]");
-        arrayList.add(tmdl2);
-
-        TimeTableModel tmdl3=new TimeTableModel();
-        tmdl3.setTtday("Tuesday");
-        tmdl3.setTtperiod("4");
-        tmdl3.setTtsubct("Hindi-Manmeet Kaur [EMP0005]");
-        arrayList.add(tmdl3);
-
-
-        TimeTableModel tmdl4=new TimeTableModel();
-        tmdl4.setTtday("WednesDay");
-        tmdl4.setTtperiod("5");
-        tmdl4.setTtsubct("Hindi-Manmeet Kaur [EMP0005]");
-        arrayList.add(tmdl4);
-
-        TimeTableModel tmdl5=new TimeTableModel();
-        tmdl5.setTtday("Thursday");
-        tmdl5.setTtperiod("6");
-        tmdl5.setTtsubct("");
-        arrayList.add(tmdl5);
-        arrayList.add(tmdl5);
-        arrayList.add(tmdl5);
-        arrayList.add(tmdl5);
-        arrayList.add(tmdl5);
-        arrayList.add(tmdl5);
-
-        TimeTableAdapter obj=new TimeTableAdapter(this,R.layout.card_time_table,arrayList);
-
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        recyclerView.setAdapter(obj);
 
         setSupportActionBar(toolbar);
 

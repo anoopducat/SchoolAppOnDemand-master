@@ -13,14 +13,14 @@
         android:id="@+id/include" />
 
 
-    <ImageView
-        android:layout_marginLeft="80dp"
-        android:layout_marginTop="99dp"
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rslt_rv"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:layout_below="@+id/include"
-        android:background="@drawable/information_img"
-        android:id="@+id/iv_result"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+
 
 
 </RelativeLayout>

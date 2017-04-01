@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -45,6 +46,8 @@ public class HomeWork extends AppCompatActivity {
 
     ArrayList<HomeWorkModel> Al=new ArrayList<>();
 
+
+    String url ="http://203.124.96.117:8063/Service1.asmx/HomeWorkAssignment";
 
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -94,52 +97,52 @@ public class HomeWork extends AppCompatActivity {
 
 
 
-        JsonArrayRequest jsonArrayRequest=new JsonArrayRequest("http://203.124.96.117:8063/Service1.asmx/HomeWorkAssignment", new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray jsonArray) {
+      JsonArrayRequest jsonArrayRequest=new JsonArrayRequest(Request.Method.POST, url, null, new Response.Listener<JSONArray>() {
+          @Override
+          public void onResponse(JSONArray response) {
 
-                for(int i=0;i<jsonArray.length();i++){
+              for (int i=0;i<response.length();i++)
+              {
+                  HomeWorkModel h1=new HomeWorkModel();
 
-                    HomeWorkModel h1=new HomeWorkModel();
+                  try {
+                      JSONObject object= (JSONObject) response.get(i);
 
-                    try {
-                        JSONObject object= (JSONObject) jsonArray.get(i);
+                      String asd=object.getString("AssignDate");
+                      String ls=object.getString("Lesson");
+                      String chp=object.getString("ChapterNo");
+                      String tnm=object.getString("TeacherName");
 
-                        String asd=object.getString("AssignDate");
-                        String ls=object.getString("Lesson");
-                        String chp=object.getString("ChapterNo");
-                        String tnm=object.getString("TeacherName");
+                      h1.sethDate(asd);
+                      h1.setHlesson(ls);
+                      h1.setHchapter(chp);
+                      h1.setTchr(tnm);
 
-                        h1.sethDate(asd);
-                        h1.setHlesson(ls);
-                        h1.setHchapter(chp);
-                        h1.setTchr(tnm);
+                      Al.add(h1);
 
-                        Al.add(h1);
-
-                        HomeHrkAdapter obj=new HomeHrkAdapter(HomeWork.this,R.layout.homework_card,Al);
-                        recyclerView.setAdapter(obj);
+                      HomeHrkAdapter obj=new HomeHrkAdapter(HomeWork.this,R.layout.homework_card,Al);
+                      recyclerView.setAdapter(obj);
 
 
 
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
 
-                }
+                  } catch (JSONException e) {
+                      e.printStackTrace();
+                  }
+              }
 
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError volleyError) {
+          }
+      }, new Response.ErrorListener() {
+          @Override
+          public void onErrorResponse(VolleyError error) {
 
-                Toast.makeText(HomeWork.this, "" + volleyError, Toast.LENGTH_SHORT).show();
+              Toast.makeText(HomeWork.this, "" + error, Toast.LENGTH_SHORT).show();
 
-            }
-        });
+
+          }
+      });
 
         requestQueue.add(jsonArrayRequest);
-
 
 
 

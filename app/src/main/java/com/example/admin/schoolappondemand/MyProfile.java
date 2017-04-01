@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -28,6 +29,8 @@ public class MyProfile extends AppCompatActivity {
 
     NetworkImageView ntwrkiv;
 
+
+    String url ="http://203.124.96.117:8063/Service1.asmx/StudentDetails";
 
     RequestQueue requestQueue;
 
@@ -83,54 +86,63 @@ public class MyProfile extends AppCompatActivity {
         address= (TextView) findViewById(R.id.profile_address);
         emel= (TextView) findViewById(R.id.tv_profile_email);
 
-        JsonArrayRequest arrayRequest=new JsonArrayRequest("http://203.124.96.117:8063/Service1.asmx/StudentDetails", new Response.Listener<JSONArray>() {
-            @Override
-            public void onResponse(JSONArray jsonArray) {
+      JsonArrayRequest jsonArrayRequest=new JsonArrayRequest(Request.Method.POST, url, null, new Response.Listener<JSONArray>() {
+          @Override
+          public void onResponse(JSONArray response) {
 
-                progressDialog.dismiss();
+              progressDialog.dismiss();
 
-                for(int i=0;i<jsonArray.length();i++)
-                {
-                    try {
-                        JSONObject object= (JSONObject) jsonArray.get(892);
+              for(int i=0;i<response.length();i++)
+              {
+                  try {
 
-                         name =object.getString("Name");
-                        String className=object.getString("ClassName");
-                        String admission=object.getString("AdmissionNo");
-                        String  teacher=object.getString("EmpName");
-                        String mobl=object.getString("FatMob");
-                        String fthr=object.getString("Father");
-                        String mthr=object.getString("Mother");
-                        String add=object.getString("GrAddr");
-                        String eml=object.getString("FatEmail");
-
-                        uname.setText(name);
-                        //tv1.setText(name);
-                        ad_no.setText(admission);
-                        cls_nm.setText(className);
-                        cls_teacher.setText(teacher);
-                        mob.setText(mobl);
-                        father.setText(fthr);
-                        mother.setText(mthr);
-                        address.setText(add);
-                        emel.setText(eml);
+                      Toast.makeText(MyProfile.this, "Success", Toast.LENGTH_SHORT).show();
 
 
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-                }
+                      JSONObject object= (JSONObject) response.get(481);
 
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError volleyError) {
-                Toast.makeText(MyProfile.this, "" + volleyError, Toast.LENGTH_SHORT).show();
+                      String clnem=object.getString("Name");
+                      String adminem=object.getString("AdmissionNo");
 
-            }
+                      String scl=object.getString("ClassSection");
+                      //String tcher=object.getString("");
+                      String sfther=object.getString("Father");
+                      String smthr=object.getString("Mother");
+                      String smob=object.getString("FatMob");
+                      String semel=object.getString("FatEmail");
+                      String saddrs=object.getString("GrAddr");
 
-        });
-            requestQueue.add(arrayRequest);
+                      uname.setText(clnem);
+                      ad_no.setText(adminem);
+                      cls_nm.setText(scl);
+                      father.setText(sfther);
+                      mother.setText(smthr);
+                      mob.setText(smob);
+                      emel.setText(semel);
+                      address.setText(saddrs);
+
+
+
+
+
+                  } catch (JSONException e) {
+                      e.printStackTrace();
+                  }
+              }
+
+          }
+      }, new Response.ErrorListener() {
+          @Override
+          public void onErrorResponse(VolleyError error) {
+
+              Toast.makeText(MyProfile.this, "" + error, Toast.LENGTH_SHORT).show();
+
+          }
+      });
+
+        requestQueue.add(jsonArrayRequest);
+
+
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         //getSupportActionBar().setLogo(R.drawable.imagecircle);
