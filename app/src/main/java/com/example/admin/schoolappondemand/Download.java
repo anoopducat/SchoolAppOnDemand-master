@@ -23,7 +23,7 @@ public class Download extends AppCompatActivity {
 
     TextView tv1;
 
-    Button downld,vw;
+    Button downld;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +36,7 @@ public class Download extends AppCompatActivity {
         tv1= (TextView) findViewById(R.id.profile_tv);
 
         downld= (Button) findViewById(R.id.dnld);
-        vw= (Button) findViewById(R.id.btn_vw);
+
 
         downld.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,24 +69,6 @@ public class Download extends AppCompatActivity {
             }
         });
 
-        vw.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                File pdfFile = new File(Environment.getExternalStorageDirectory() + "/testthreepdf/" + "maven.pdf");  // -> filename = maven.pdf
-                Uri path = Uri.fromFile(pdfFile);
-                Intent pdfIntent = new Intent(Intent.ACTION_VIEW);
-                pdfIntent.setDataAndType(path, "application/pdf");
-                pdfIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-
-                try{
-                    startActivity(pdfIntent);
-                }catch(ActivityNotFoundException e){
-                    Toast.makeText(Download.this, "No Application available to view PDF", Toast.LENGTH_SHORT).show();
-                }
-
-            }
-        });
 
         setSupportActionBar(toolbar);
 
@@ -144,6 +126,25 @@ public class Download extends AppCompatActivity {
             progressDialog.dismiss();
 
             Toast.makeText(Download.this, "Downloading Complete", Toast.LENGTH_SHORT).show();
+
+            File pdfFile = new File(Environment.getExternalStorageDirectory() + "/testthreepdf/" + "maven.pdf");  // -> filename = maven.pdf
+            Uri path = Uri.fromFile(pdfFile);
+            Intent pdfIntent = new Intent(Intent.ACTION_VIEW);
+            pdfIntent.setDataAndType(path, "application/pdf");
+            pdfIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+
+            try{
+                startActivity(pdfIntent);
+            }catch(ActivityNotFoundException e){
+                Toast.makeText(Download.this, "No Application available to view PDF", Toast.LENGTH_SHORT).show();
+            }
+
+
+
+
+
         }
+
     }
-}
+    }
+
