@@ -90,6 +90,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
+            <ImageButton
+                android:layout_below="@+id/iv_book"
+                android:layout_marginTop="40dp"
+                android:src="@drawable/download"
+                android:layout_marginLeft="230dp"
+                android:id="@+id/hmrk_dwld"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
 
 
 

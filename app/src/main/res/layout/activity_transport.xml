@@ -13,61 +13,89 @@
         android:layout_height="wrap_content"
         android:id="@+id/include" />
 
-    <ImageView
-        android:id="@+id/iv_trnspt"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="10dp"
-        android:src="@drawable/school_bus"
-        android:layout_below="@id/include"
-        android:layout_width="match_parent"
-        android:layout_height="170dp" />
+
 <LinearLayout android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:weightSum="3"
     android:layout_marginTop="10dp"
     android:id="@+id/l1_ivbtn"
-  android:layout_below="@+id/iv_trnspt"
+  android:layout_below="@+id/include"
     android:orientation="horizontal">
     <de.hdodenhof.circleimageview.CircleImageView
-         android:layout_width="40dp"
-         android:layout_height="match_parent"
+        android:layout_width="90dp"
+        android:layout_height="109dp"
         android:id="@+id/iv_btn_bs"
         app:civ_border_color="#3e3a3a"
         app:civ_border_width="2dp"
-        android:src="@drawable/chk"
+        android:src="@drawable/t1"
         android:layout_marginLeft="00dp"
     android:background="@drawable/ring"
-        android:layout_weight="1"
+        android:layout_weight="0.3"
     />
     <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="107dp"
+        android:layout_width="90dp"
         android:layout_height="109dp"
         android:id="@+id/driver"
         app:civ_border_color="#3e3a3a"
         app:civ_border_width="2dp"
         android:layout_weight="0.3"
-        android:layout_marginLeft="18dp"
-        android:src="@drawable/driver" />
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/t2" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/incharger"
-        android:layout_width="0dp"
+        android:layout_width="90dp"
+        android:layout_height="109dp"
         app:civ_border_color="#3e3a3a"
         app:civ_border_width="2dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1.2"
-        android:src="@drawable/incharger"
+
+        android:layout_weight="0.3"
+        android:src="@drawable/t3"
         android:layout_marginLeft="25dp"/>
 </LinearLayout>
     <LinearLayout
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="28dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_below="@+id/l1_ivbtn"
+        android:layout_height="match_parent"
         android:id="@+id/liner_for_detail"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:layout_below="@+id/l1_ivbtn"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/tv_bs_dtl"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="0dp"
+            android:text="BUS STOP DETAIL"
+            android:textColor="@color/colorBlack"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_marginTop="9dp"
+            android:textSize="20dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@color/colorBlack"
+            android:id="@+id/tv_pkrt"
+            android:text="Pickup Route :"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_marginTop="5dp"
+            android:id="@+id/pk_rt"
+            android:text="N/A"
+            android:layout_marginLeft="4dp"
+            android:textSize="15dp"
+            android:layout_below="@id/tv_bs_dtl"
+            android:textColor="@color/colorBlack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
 
     </LinearLayout>
 </RelativeLayout>

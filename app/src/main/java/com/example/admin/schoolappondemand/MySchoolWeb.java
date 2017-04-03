@@ -51,13 +51,12 @@ public class MySchoolWeb extends AppCompatActivity {
         webView.setWebViewClient(new WebViewClient());
 
 
-       // webView.loadUrl("https://www.hrsoftwaresolution.com/schoolappondemand")
-        // ;
+        webView.loadUrl("https://www.hrsoftwaresolution.com/schoolappondemand");
 
         webView.setWebChromeClient(new WebChromeClient());
 
-        webView.loadData("<iframe src=\"https://www.hrsoftwaresolution.com/schoolappondemand\" width=\"100%\" height=\"400%\"></iframe>", "text/html",
-                "utf-8");
+        //webView.loadData("<iframe src=\"https://www.hrsoftwaresolution.com/schoolappondemand\" width=\"100%\" height=\"400%\"></iframe>", "text/html",
+             //   "utf-8");
 
     }
 }
