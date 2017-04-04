@@ -5,8 +5,12 @@ package com.example.admin.schoolappondemand;
         import android.support.v7.app.AppCompatActivity;
         import android.os.Bundle;
         import android.support.v7.widget.Toolbar;
+        import android.text.method.HideReturnsTransformationMethod;
+        import android.text.method.PasswordTransformationMethod;
         import android.view.View;
         import android.widget.Button;
+        import android.widget.CheckBox;
+        import android.widget.CompoundButton;
         import android.widget.EditText;
         import android.widget.TextView;
 
@@ -25,6 +29,8 @@ Button btn1;
 
     EditText e1,e2;
 
+    CheckBox cb;
+
     RequestQueue requestQueue;
 
     String unm="1482/16";
@@ -35,7 +41,24 @@ Button btn1;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        cb= (CheckBox) findViewById(R.id.checkBox);
+
         requestQueue= Volley.newRequestQueue(this);
+
+        cb.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(!isChecked) {
+                    //e2.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
+
+                    e2.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                } else {
+                    //e2.setInputType(129);
+
+                    e2.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                }
+            }
+        });
 
 
        // Toolbar toolbar= (Toolbar) findViewById(R.id.toolbar);

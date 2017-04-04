@@ -96,7 +96,7 @@ public class MyProfile extends AppCompatActivity {
               {
                   try {
 
-                      Toast.makeText(MyProfile.this, "Success", Toast.LENGTH_SHORT).show();
+
 
 
                       JSONObject object= (JSONObject) response.get(481);
