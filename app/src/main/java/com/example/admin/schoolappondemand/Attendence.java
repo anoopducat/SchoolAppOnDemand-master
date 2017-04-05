@@ -11,14 +11,29 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
 import com.prolificinteractive.materialcalendarview.CalendarDay;
 import com.prolificinteractive.materialcalendarview.CalendarMode;
 import com.prolificinteractive.materialcalendarview.MaterialCalendarView;
 import com.prolificinteractive.materialcalendarview.OnDateSelectedListener;
+import com.prolificinteractive.materialcalendarview.format.DayFormatter;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.HashSet;
+import java.util.Locale;
 
 public class Attendence extends AppCompatActivity {
 
@@ -26,11 +41,16 @@ public class Attendence extends AppCompatActivity {
     MaterialCalendarView materialCalendarView;
     Calendar cal1,cal2;
 
+    String url ="http://203.124.96.117:8063/Service1.asmx/Attendance";
+    RequestQueue requestQueue;
+
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        requestQueue= Volley.newRequestQueue(this);
 
          cal1 = Calendar.getInstance();
         cal1.set(2017, 1, 3);
@@ -80,6 +100,49 @@ public class Attendence extends AppCompatActivity {
                 Toast.makeText(Attendence.this, "" + date, Toast.LENGTH_SHORT).show();
             }
         });
+
+
+        JsonArrayRequest jsonArrayRequest=new JsonArrayRequest(Request.Method.POST, url, null, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+
+
+
+                for(int i=0;i<response.length();i++)
+                {
+                    try {
+                        JSONObject object= (JSONObject) response.get(0);
+                        String det=object.getString("Att_date");
+
+                        //SimpleDateFormat simpleDateFormat=new SimpleDateFormat("dd//mm//yyyy", Locale.US);
+                       // Date date=simpleDateFormat.parse(det);
+
+                        Toast.makeText(Attendence.this, det, Toast.LENGTH_SHORT).show();
+
+                       // Date date = s.parse(str);
+
+
+                        //Date date=simpleDateFormat.parse(det);
+                        //materialCalendarView.setDayFormatter((DayFormatter) simpleDateFormat);
+
+
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                Toast.makeText(Attendence.this, "" +error, Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        requestQueue.add(jsonArrayRequest);
 
 
 
