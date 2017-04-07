@@ -13,4 +13,85 @@
         android:id="@+id/include" />
 
 
+    <android.support.v7.widget.CardView
+        android:id="@+id/brthdy_card"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="110dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginLeft="10dp"
+                android:textSize="20sp"
+                android:textColor="@color/colorBlack"
+                android:text="Student Name    : "
+                android:id="@+id/opd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textColor="@color/colorBlack"
+                android:textSize="20sp"
+                android:text="Name"
+                android:layout_marginLeft="220dp"
+                android:id="@+id/bdsnm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textSize="20sp"
+                android:textColor="@color/colorBlack"
+                android:text="Class  :"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/opd"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/trtdt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textColor="@color/colorBlack"
+                android:textSize="20sp"
+                android:text="Class"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/bdsnm"
+                android:layout_marginLeft="220dp"
+                android:id="@+id/tv_bdcls"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:textColor="@color/colorBlack"
+                android:textSize="20sp"
+                android:text="BirthDay Date        :"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/trtdt"
+                android:id="@+id/doctornm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:textColor="@color/colorBlack"
+                android:textSize="20sp"
+                android:text="BirthDay"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/tv_bdcls"
+                android:layout_marginLeft="220dp"
+                android:id="@+id/tv_bday"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+
+
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+
+
 </RelativeLayout>
