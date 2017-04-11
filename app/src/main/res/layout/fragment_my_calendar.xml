@@ -1,0 +1,19 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.admin.schoolappondemand.MyCalendar">
+
+    <!-- TODO: Update blank fragment layout -->
+    <CalendarView
+        android:layout_marginTop="10dp"
+        android:id="@+id/simpleCalendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:firstDayOfWeek="2"
+        android:focusedMonthDateColor="@color/colorPrimary"
+        android:scrollbars="none"
+        android:maxDate="01/01/2018"
+        android:minDate="01/01/2016" />
+
+</RelativeLayout>
