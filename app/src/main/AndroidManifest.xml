@@ -115,8 +115,10 @@
             android:name=".VehicleTracking"
             android:label="@string/title_activity_vehicle_tracking"
             android:screenOrientation="portrait" />
-        <activity android:name=".MySchoolWeb" />
+        <activity android:name=".MySchoolWeb"
+            android:screenOrientation="portrait"/>
         <activity
+            android:screenOrientation="portrait"
             android:name=".Calendar"
             android:label="@string/title_activity_calendar"
             android:theme="@style/AppTheme"></activity>
