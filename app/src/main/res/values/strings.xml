@@ -16,4 +16,5 @@
     <string name="title_activity_apply_leave">ApplyLeave</string>
     <string name="title_activity_vehicle_tracking">Map</string>
     <string name="title_activity_calendar">Calendar</string>
+    <string name="title_activity_exam_result">ExamResult</string>
 </resources>

@@ -54,9 +54,6 @@
             android:name=".Transport"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ExamResult"
-            android:screenOrientation="portrait" />
-        <activity
             android:name=".Hostal"
             android:screenOrientation="portrait" />
         <activity
@@ -115,12 +112,17 @@
             android:name=".VehicleTracking"
             android:label="@string/title_activity_vehicle_tracking"
             android:screenOrientation="portrait" />
-        <activity android:name=".MySchoolWeb"
-            android:screenOrientation="portrait"/>
         <activity
-            android:screenOrientation="portrait"
+            android:name=".MySchoolWeb"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".Calendar"
             android:label="@string/title_activity_calendar"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".ExamResult"
+            android:label="@string/title_activity_exam_result"
             android:theme="@style/AppTheme"></activity>
     </application>
 
