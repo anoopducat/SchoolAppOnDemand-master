@@ -26,9 +26,9 @@
         <TextView
             android:textColor="@color/colorBlack"
             android:textSize="15sp"
-            android:text="Subject Group Name     : "
+            android:text="Subject Group Name : "
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="5dp"
             android:id="@+id/tv_sub_grp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -46,9 +46,9 @@
         <TextView
             android:textColor="@color/colorBlack"
             android:textSize="15sp"
-            android:text="Subject Name                 : "
+            android:text="Subject Name             :"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="5dp"
             android:id="@+id/tv_sub"
             android:layout_below="@id/tv_sub_grp"
             android:layout_width="wrap_content"
@@ -67,9 +67,9 @@
         <TextView
             android:textSize="15sp"
             android:textColor="@color/colorBlack"
-            android:text="Obtained Marks              :"
+            android:text="Obtained Marks          :"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="5dp"
             android:layout_below="@+id/tv_sub"
             android:id="@+id/tv_obtained"
             android:layout_width="wrap_content"
@@ -89,9 +89,9 @@
         <TextView
             android:textColor="@color/colorBlack"
             android:textSize="15sp"
-            android:text="Full Marks                        :"
+            android:text="Full Marks                   :"
             android:layout_marginTop="10dp"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="10dp"
             android:layout_below="@+id/tv_obtained"
             android:id="@+id/tv_full_mrk"
             android:layout_width="wrap_content"

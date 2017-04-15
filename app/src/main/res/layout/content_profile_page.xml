@@ -34,7 +34,8 @@
                     android:id="@+id/lyout_pf"
                     android:layout_width="match_parent"
                     android:layout_height="50dp">
-                    <TextView android:id="@+id/title_name"
+                    <TextView
+                        android:id="@+id/title_name"
                         android:textColor="@color/colorWhite"
                         android:layout_marginLeft="3dp"
                         android:layout_marginTop="15dp"
@@ -44,13 +45,13 @@
                         android:layout_height="wrap_content"
                         android:text="Name" />
                     <TextView
-                        android:gravity="left"
+
                         android:textColor="@color/colorWhite"
                         android:id="@+id/title_class"
 
                         android:textSize="17sp"
                         android:layout_width="140dp"
-                        android:layout_marginLeft="90dp"
+                        android:layout_marginLeft="75dp"
                         android:layout_marginTop="15dp"
                         android:layout_height="wrap_content"
                         android:text="Class Name" />
