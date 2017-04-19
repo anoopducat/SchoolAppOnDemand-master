@@ -6,65 +6,21 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/evnt_card"
-        android:layout_marginLeft="1dp"
-        android:layout_marginRight="1dp"
-        android:layout_marginTop="10dp"
+    <include
+        layout="@layout/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_marginLeft="10dp"
-                android:textSize="20sp"
-                android:textColor="@color/colorBlack"
-                android:text="Event Name    : "
-                android:id="@+id/opd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:textColor="@color/colorBlack"
-                android:textSize="20sp"
-                android:text="Name"
-                android:layout_marginLeft="220dp"
-                android:id="@+id/evntnm"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:textSize="20sp"
-                android:textColor="@color/colorBlack"
-                android:text="Event Date      :"
-                android:layout_marginTop="20dp"
-                android:layout_below="@+id/opd"
-                android:layout_marginLeft="10dp"
-                android:id="@+id/trtdt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-            <TextView
-                android:textColor="@color/colorBlack"
-                android:textSize="20sp"
-                android:text="Date"
-                android:layout_marginTop="20dp"
-                android:layout_below="@+id/evntnm"
-                android:layout_marginLeft="220dp"
-                android:id="@+id/evntdt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:id="@+id/include" />
 
 
-
-
-
-
-        </RelativeLayout>
-
-
-    </android.support.v7.widget.CardView>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_calevent"
+        android:layout_below="@+id/include"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
 
 
 
