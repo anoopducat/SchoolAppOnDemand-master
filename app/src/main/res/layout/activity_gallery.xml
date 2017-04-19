@@ -12,16 +12,69 @@
         android:layout_height="wrap_content"
         android:id="@+id/include" />
 
-    <ImageView
-        android:src="@drawable/information_img"
-        android:id="@+id/iv_gallery"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="67dp"
-        android:layout_marginEnd="67dp"
-        android:layout_marginTop="58dp"
+    <com.android.volley.toolbox.NetworkImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="33dp"
+        android:id="@+id/imageView"
+        android:background="@drawable/if_profile"
         android:layout_below="@+id/include"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_marginLeft="35dp"
+
+        />
+
+    <com.android.volley.toolbox.NetworkImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="33dp"
+        android:id="@+id/imageView1"
+        android:background="@drawable/if_profile"
+        android:layout_below="@+id/include"
+        android:layout_marginLeft="215dp"
+
+        />
+
+
+    <com.android.volley.toolbox.NetworkImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="39dp"
+        android:id="@+id/imageView2"
+        android:background="@drawable/if_profile"
+        android:layout_marginLeft="45dp"
+        android:layout_below="@+id/imageView"
+         />
+
+    <com.android.volley.toolbox.NetworkImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="39dp"
+        android:id="@+id/imageView3"
+        android:background="@drawable/if_profile"
+        android:layout_marginLeft="225dp"
+        android:layout_below="@+id/imageView1"
+        />
+
+    <com.android.volley.toolbox.NetworkImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="39dp"
+        android:id="@+id/imageView4"
+        android:background="@drawable/if_profile"
+        android:layout_marginLeft="45dp"
+        android:layout_below="@+id/imageView2"
+        />
+
+    <com.android.volley.toolbox.NetworkImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="39dp"
+        android:id="@+id/imageView5"
+        android:background="@drawable/if_profile"
+        android:layout_marginLeft="225dp"
+        android:layout_below="@+id/imageView3"
+        />
+
+
 
 </RelativeLayout>
