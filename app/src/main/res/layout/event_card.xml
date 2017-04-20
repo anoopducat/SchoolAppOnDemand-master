@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <android.support.v7.widget.CardView
         android:id="@+id/evnt_card"
         android:layout_marginLeft="1dp"
         android:layout_marginRight="1dp"
         android:layout_marginTop="10dp"
+        cardview:cardBackgroundColor="#e8e8e8"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="150dp">
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -26,7 +29,7 @@
                 android:textColor="@color/colorBlack"
                 android:textSize="20sp"
                 android:text="Name"
-                android:layout_marginLeft="220dp"
+                android:layout_marginLeft="170dp"
                 android:id="@+id/evntnm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -34,24 +37,26 @@
             <TextView
                 android:textSize="20sp"
                 android:textColor="@color/colorBlack"
-                android:text="HoliDay Date      :"
-                android:layout_marginTop="40dp"
-                android:layout_below="@+id/opd"
+                android:text="HoliDay"
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"
+                android:layout_below="@+id/evntnm"
                 android:id="@+id/hldet"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
-                android:textColor="@color/colorBlack"
                 android:textSize="20sp"
+                android:textColor="@color/colorBlack"
                 android:text="Date"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="170dp"
                 android:layout_below="@+id/evntnm"
-                android:layout_marginLeft="220dp"
                 android:id="@+id/evntdt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
+
+
 
 
 
